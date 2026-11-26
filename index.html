@@ -1,0 +1,576 @@
+<!DOCTYPE html>
+<html lang="lt">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>UAB „Scan Technika“ — Svetainės dizaino koncepcijos (2026)</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #f4f6f8;
+      --surface: #ffffff;
+      --text: #111827;
+      --muted: #4b5563;
+      --border: #e2e8f0;
+      --accent: #14452f;
+      --accent-hover: #0f3624;
+      --radius: 16px;
+      --shadow: 0 10px 30px -12px rgba(15, 23, 42, 0.12);
+      --shadow-hover: 0 20px 40px -15px rgba(15, 23, 42, 0.2);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.55;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .topbar {
+      background: #0f172a;
+      color: #cbd5e1;
+      font-size: 0.85rem;
+      padding: 10px 20px;
+    }
+
+    .container {
+      width: 100%;
+      max-width: 1320px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    .topbar-inner {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      gap: 8px 16px;
+    }
+
+    .topbar a {
+      color: #f8fafc;
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    .topbar a:hover {
+      text-decoration: underline;
+    }
+
+    header.hero {
+      background: var(--surface);
+      border-bottom: 1px solid var(--border);
+      padding: 32px 0 36px;
+    }
+
+    .hero-top {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      margin-bottom: 24px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+
+    .brand img {
+      height: 40px;
+      width: auto;
+      display: block;
+    }
+
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: #ecfdf5;
+      color: #065f46;
+      border: 1px solid #a7f3d0;
+      padding: 6px 12px;
+      border-radius: 999px;
+      font-size: 0.8rem;
+      font-weight: 600;
+    }
+
+    .hero h1 {
+      font-size: clamp(1.75rem, 3vw, 2.5rem);
+      font-weight: 800;
+      letter-spacing: -0.025em;
+      color: #0f172a;
+      margin-bottom: 10px;
+    }
+
+    .hero p {
+      max-width: 780px;
+      color: var(--muted);
+      font-size: 1.02rem;
+    }
+
+    main {
+      flex: 1;
+      padding: 40px 0 56px;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 28px;
+      margin-bottom: 44px;
+    }
+
+    .card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      overflow: hidden;
+      box-shadow: var(--shadow);
+      display: flex;
+      flex-direction: column;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-hover);
+    }
+
+    .preview-link {
+      display: block;
+      position: relative;
+      background: #0f172a;
+      aspect-ratio: 16 / 10;
+      overflow: hidden;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .preview-link img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: top center;
+      display: block;
+      transition: transform 0.35s ease;
+    }
+
+    .card:hover .preview-link img {
+      transform: scale(1.03);
+    }
+
+    .variant-num {
+      position: absolute;
+      top: 12px;
+      left: 12px;
+      background: rgba(15, 23, 42, 0.88);
+      color: #ffffff;
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      padding: 5px 10px;
+      border-radius: 6px;
+      backdrop-filter: blur(4px);
+    }
+
+    .card-body {
+      padding: 22px 24px 24px;
+      display: flex;
+      flex-direction: column;
+      flex: 1;
+    }
+
+    .card-title {
+      font-size: 1.2rem;
+      font-weight: 700;
+      color: #0f172a;
+      margin-bottom: 8px;
+    }
+
+    .card-desc {
+      color: var(--muted);
+      font-size: 0.94rem;
+      margin-bottom: 16px;
+    }
+
+    .swatches {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 16px;
+      font-size: 0.8rem;
+      color: var(--muted);
+    }
+
+    .dot {
+      width: 16px;
+      height: 16px;
+      border-radius: 50%;
+      border: 1px solid rgba(15, 23, 42, 0.15);
+      display: inline-block;
+      flex-shrink: 0;
+    }
+
+    .tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-bottom: 20px;
+    }
+
+    .tag {
+      font-size: 0.76rem;
+      font-weight: 600;
+      color: #334155;
+      background: #f1f5f9;
+      padding: 4px 10px;
+      border-radius: 999px;
+    }
+
+    .card-actions {
+      margin-top: auto;
+      display: flex;
+      gap: 10px;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      width: 100%;
+      padding: 12px 18px;
+      border-radius: 10px;
+      font-size: 0.94rem;
+      font-weight: 600;
+      text-decoration: none;
+      transition: background 0.18s ease, transform 0.15s ease;
+    }
+
+    .btn-v1 {
+      background: #9f241d;
+      color: #ffffff;
+    }
+    .btn-v1:hover { background: #831d17; }
+
+    .btn-v2 {
+      background: #14452f;
+      color: #ffffff;
+    }
+    .btn-v2:hover { background: #0f3624; }
+
+    .btn-v3 {
+      background: #ea580c;
+      color: #ffffff;
+    }
+    .btn-v3:hover { background: #c2410c; }
+
+    .btn-v4 {
+      background: #3d7f10;
+      color: #ffffff;
+    }
+    .btn-v4:hover { background: #2d620b; }
+
+    .checklist {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 28px;
+    }
+
+    .checklist h2 {
+      font-size: 1.15rem;
+      font-weight: 700;
+      margin-bottom: 16px;
+      color: #0f172a;
+    }
+
+    .checklist-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 14px 24px;
+    }
+
+    .check-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      font-size: 0.92rem;
+      color: #334155;
+    }
+
+    .check-icon {
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      background: #dcfce7;
+      color: #166534;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.78rem;
+      font-weight: 800;
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+
+    footer {
+      background: #0f172a;
+      color: #94a3b8;
+      padding: 22px 0;
+      font-size: 0.86rem;
+    }
+
+    .footer-inner {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      gap: 12px;
+    }
+
+    footer a {
+      color: #e2e8f0;
+      text-decoration: none;
+    }
+
+    footer a:hover {
+      text-decoration: underline;
+    }
+
+    @media (max-width: 1024px) {
+      .grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+      .checklist-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+    }
+
+    @media (max-width: 680px) {
+      .grid,
+      .checklist-grid {
+        grid-template-columns: 1fr;
+      }
+      header.hero {
+        padding: 24px 0 28px;
+      }
+      main {
+        padding: 28px 0 40px;
+      }
+      .checklist {
+        padding: 20px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="topbar">
+    <div class="container topbar-inner">
+      <span>UAB „Scan Technika“ — dizaino prototipų palyginimas</span>
+      <div>
+        <a href="tel:+37067640057">+370 676 40057</a> &nbsp;•&nbsp;
+        <a href="mailto:info@scantechnika.lt">info@scantechnika.lt</a> &nbsp;•&nbsp;
+        <a href="https://www.elturgus.lt/" target="_blank" rel="noopener">elturgus.lt</a>
+      </div>
+    </div>
+  </div>
+
+  <header class="hero">
+    <div class="container">
+      <div class="hero-top">
+        <div class="brand">
+          <img src="variant-1-lasersupply/assets/logo.png" alt="UAB Scan Technika logotipas">
+        </div>
+        <span class="badge">4 patikrintos interaktyvios koncepcijos</span>
+      </div>
+      <h1>Naujos svetainės dizaino koncepcijos</h1>
+      <p>
+        Žemiau pateikti keturi skirtingi, visiškai veikiantys UAB „Scan Technika“ (scantechnika.lt) pagrindinio puslapio prototipai.
+        Kiekvienas jų pritaikytas kompiuteriams ir mobiliesiems telefonams, turi realias produktų nuotraukas, gyvą paiešką ir aiškų perėjimą į <strong>elturgus.lt</strong>.
+      </p>
+    </div>
+  </header>
+
+  <main>
+    <div class="container">
+      <section class="grid" aria-label="Dizaino variantai">
+        <!-- Variant 1 -->
+        <article class="card">
+          <a class="preview-link" href="variant-1-lasersupply/index.html" target="_blank" rel="noopener">
+            <img src="previews/variant-1-desktop.png" alt="1 variantas — LaserSupply B2B inžinerinis dizainas">
+            <span class="variant-num">Variantas 1</span>
+          </a>
+          <div class="card-body">
+            <h2 class="card-title">„LaserSupply“ B2B inžinerinis</h2>
+            <p class="card-desc">
+              Griežtas pramoninio B2B katalogo stilius su tamsiai mėlyna paieškos juosta, raudonu pagrindiniu akcentu ir aiškia specializacijų tinklelio struktūra.
+            </p>
+            <div class="swatches">
+              <span class="dot" style="background:#1b283a" title="#1b283a"></span>
+              <span class="dot" style="background:#9f241d" title="#9f241d"></span>
+              <span class="dot" style="background:#f1f4f6" title="#f1f4f6"></span>
+              <span>Plieno mėlyna + pramoninė raudona</span>
+            </div>
+            <div class="tags">
+              <span class="tag">3 lygių antraštė</span>
+              <span class="tag">Katalogo meniu</span>
+              <span class="tag">B2B tikslumas</span>
+            </div>
+            <div class="card-actions">
+              <a class="btn btn-v1" href="variant-1-lasersupply/index.html" target="_blank" rel="noopener">
+                Peržiūrėti 1 variantą →
+              </a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Variant 2 -->
+        <article class="card">
+          <a class="preview-link" href="variant-2-nordic/index.html" target="_blank" rel="noopener">
+            <img src="previews/variant-2-desktop.png" alt="2 variantas — Skandinaviškas pramoninis minimalizmas">
+            <span class="variant-num">Variantas 2</span>
+          </a>
+          <div class="card-body">
+            <h2 class="card-title">Skandinaviškas pramoninis minimalizmas</h2>
+            <p class="card-desc">
+              Šviesi, erdvi ir moderni Danijos–Lietuvos paveldo estetika su gilia miško žalia spalva, gintariniais akcentais ir lengvai skaitomu katalogu.
+            </p>
+            <div class="swatches">
+              <span class="dot" style="background:#14452f" title="#14452f"></span>
+              <span class="dot" style="background:#e5a00d" title="#e5a00d"></span>
+              <span class="dot" style="background:#f8f9f7" title="#f8f9f7"></span>
+              <span>Skandinaviška žalia + gintaras</span>
+            </div>
+            <div class="tags">
+              <span class="tag">Šviesus dizainas</span>
+              <span class="tag">Aukštas pasitikėjimas</span>
+              <span class="tag">Prekės ženklo tęstinumas</span>
+            </div>
+            <div class="card-actions">
+              <a class="btn btn-v2" href="variant-2-nordic/index.html" target="_blank" rel="noopener">
+                Peržiūrėti 2 variantą →
+              </a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Variant 3 -->
+        <article class="card">
+          <a class="preview-link" href="variant-3-agro-pro/index.html" target="_blank" rel="noopener">
+            <img src="previews/variant-3-desktop.png" alt="3 variantas — Heavy-Duty Agro Pro tamsus dizainas">
+            <span class="variant-num">Variantas 3</span>
+          </a>
+          <div class="card-body">
+            <h2 class="card-title">„Heavy-Duty Agro Pro“ (tamsus)</h2>
+            <p class="card-desc">
+              Galingas techninis tamsaus plieno dizainas su didelio kontrasto oranžiniais mygtukais — išskirtinis stilius dirbtuvėms, servisams ir ūkiams.
+            </p>
+            <div class="swatches">
+              <span class="dot" style="background:#11161b" title="#11161b"></span>
+              <span class="dot" style="background:#f59e0b" title="#f59e0b"></span>
+              <span class="dot" style="background:#ea580c" title="#ea580c"></span>
+              <span>Tamsus plienas + saugos oranžinė</span>
+            </div>
+            <div class="tags">
+              <span class="tag">Tamsi tema</span>
+              <span class="tag">Ryškūs CTA</span>
+              <span class="tag">Techninis charakteris</span>
+            </div>
+            <div class="card-actions">
+              <a class="btn btn-v3" href="variant-3-agro-pro/index.html" target="_blank" rel="noopener">
+                Peržiūrėti 3 variantą →
+              </a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Variant 4 -->
+        <article class="card">
+          <a class="preview-link" href="variant-4-fast-catalog/index.html" target="_blank" rel="noopener">
+            <img src="previews/variant-4-desktop.png" alt="4 variantas — Greito prekių radimo katalogas su logotipo spalvomis">
+            <span class="variant-num">Variantas 4</span>
+          </a>
+          <div class="card-body">
+            <h2 class="card-title">Greitas katalogas (logotipo spalvos)</h2>
+            <p class="card-desc">
+              Visos 8 prekių kategorijos matomos iškart be slinkimo, logotipo žalia ir geltona paletė, greitos peržiūros langas vienu paspaudimu ir modernūs interaktyvūs efektai.
+            </p>
+            <div class="swatches">
+              <span class="dot" style="background:#58a618" title="#58a618"></span>
+              <span class="dot" style="background:#f2b705" title="#f2b705"></span>
+              <span class="dot" style="background:#1d4d0a" title="#1d4d0a"></span>
+              <span>Logotipo žalia + auksas</span>
+            </div>
+            <div class="tags">
+              <span class="tag">Prekės iškart viršuje</span>
+              <span class="tag">Greita peržiūra</span>
+              <span class="tag">Modernūs efektai</span>
+            </div>
+            <div class="card-actions">
+              <a class="btn btn-v4" href="variant-4-fast-catalog/index.html" target="_blank" rel="noopener">
+                Peržiūrėti 4 variantą →
+              </a>
+            </div>
+          </div>
+        </article>
+      </section>
+
+      <section class="checklist" aria-label="Bendra visų variantų funkcionalumo santrauka">
+        <h2>Kas patikrinta ir įgyvendinta visuose 4 variantuose</h2>
+        <div class="checklist-grid">
+          <div class="check-item">
+            <span class="check-icon">✓</span>
+            <span><strong>100 % lietuviškas turinys:</strong> kardanai, hidraulika, itališki komponentai, įmonės istorija nuo 2000 m.</span>
+          </div>
+          <div class="check-item">
+            <span class="check-icon">✓</span>
+            <span><strong>8 produktų kategorijos</strong> su tikromis Scantechnika nuotraukomis ir interaktyvia gyva paieška.</span>
+          </div>
+          <div class="check-item">
+            <span class="check-icon">✓</span>
+            <span><strong>elturgus.lt sekcija</strong> („Verslui, ūkininkams“) su visomis 7 pagrindinėmis el. parduotuvės grupėmis.</span>
+          </div>
+          <div class="check-item">
+            <span class="check-icon">✓</span>
+            <span><strong>Mobilioji versija (375 px):</strong> veikiantis hamburger meniu (5 punktai), be horizontalaus slinkimo.</span>
+          </div>
+          <div class="check-item">
+            <span class="check-icon">✓</span>
+            <span><strong>Kainų apžvalga ir užklausos forma:</strong> tvarkingai prisitaiko mobiliuosiuose įrenginiuose.</span>
+          </div>
+          <div class="check-item">
+            <span class="check-icon">✓</span>
+            <span><strong>Paspaudžiami kontaktai:</strong> tel. +370 676 40057, el. paštas, adresas Žiežmariuose ir Facebook nuoroda.</span>
+          </div>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <footer>
+    <div class="container footer-inner">
+      <span>© 2026 UAB „Scan Technika“ — dizaino koncepcijų peržiūros aplinka</span>
+      <span>
+        <a href="https://www.elturgus.lt/" target="_blank" rel="noopener">elturgus.lt</a> &nbsp;•&nbsp;
+        <a href="https://www.facebook.com/mindaugas.simkunas" target="_blank" rel="noopener">Facebook</a>
+      </span>
+    </div>
+  </footer>
+</body>
+</html>

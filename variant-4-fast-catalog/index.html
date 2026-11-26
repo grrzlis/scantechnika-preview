@@ -1,0 +1,2840 @@
+<!DOCTYPE html>
+<html lang="lt">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>UAB „Scan Technika“ — Greitas kardanų ir hidraulikos katalogas</title>
+  <meta name="description" content="UAB „Scan Technika“ — hidraulinės ir mechaninės perdavimo sistemos nuo 2000 m. Kardaniniai velenai, aukšto slėgio žarnos, teleskopiniai hidrocilindrai, siurbliai ir dalys." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      /* Logo-matched Scantechnika palette */
+      --green-brand: #58A618;
+      --green-dark: #3D7F10;
+      --green-deep: #1D4D0A;
+      --green-soft: #ECF6E4;
+      --green-tint: #F4F9F0;
+
+      --gold-brand: #F2B705;
+      --gold-deep: #D99B00;
+      --gold-soft: #FFF8DC;
+      --gold-border: #F5DC87;
+
+      /* Clean bright surfaces & crisp slate-green ink */
+      --bg: #F5F8F3;
+      --surface: #FFFFFF;
+      --surface-alt: #F8FBF6;
+      --border: #DCE6D7;
+      --border-strong: #C5D6BC;
+      --ink: #142117;
+      --ink-secondary: #3A4D3E;
+      --ink-muted: #5C7060;
+
+      --shadow-sm: 0 2px 8px rgba(20, 33, 23, 0.05);
+      --shadow-md: 0 10px 28px rgba(20, 33, 23, 0.08);
+      --shadow-lg: 0 22px 54px rgba(20, 33, 23, 0.14);
+      --radius-sm: 10px;
+      --radius-md: 14px;
+      --radius-lg: 20px;
+      --container: 1320px;
+      --header-h: 62px;
+    }
+
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      -webkit-text-size-adjust: 100%;
+    }
+
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      color: var(--ink);
+      background-color: var(--bg);
+      line-height: 1.5;
+      overflow-x: hidden;
+    }
+
+    h1, h2, h3, h4, .font-display {
+      font-family: 'Plus Jakarta Sans', 'Inter', sans-serif;
+      letter-spacing: -0.02em;
+      color: var(--ink);
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    button, input, select, textarea {
+      font-family: inherit;
+      color: inherit;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    .container {
+      width: 100%;
+      max-width: var(--container);
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    /* ========================
+       STICKY GLASS HEADER
+       ======================== */
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 90;
+      height: var(--header-h);
+      background: rgba(255, 255, 255, 0.88);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border-bottom: 1px solid rgba(220, 230, 215, 0.9);
+      transition: box-shadow 0.25s ease, background 0.25s ease;
+    }
+
+    .site-header.scrolled {
+      background: rgba(255, 255, 255, 0.95);
+      box-shadow: 0 6px 24px rgba(20, 33, 23, 0.07);
+    }
+
+    .header-inner {
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+    }
+
+    .brand-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      flex-shrink: 0;
+    }
+
+    .brand-link img {
+      height: 36px;
+      width: auto;
+      object-fit: contain;
+    }
+
+    .main-nav {
+      display: flex;
+      align-items: center;
+      gap: 4px;
+    }
+
+    .main-nav a {
+      padding: 7px 12px;
+      border-radius: 9px;
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: var(--ink-secondary);
+      transition: color 0.18s ease, background 0.18s ease;
+    }
+
+    .main-nav a:hover,
+    .main-nav a:focus-visible {
+      color: var(--green-deep);
+      background: var(--green-soft);
+      outline: none;
+    }
+
+    .header-actions {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      flex-shrink: 0;
+    }
+
+    .phone-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      padding: 7px 12px;
+      border-radius: 999px;
+      background: var(--green-tint);
+      border: 1px solid var(--border);
+      font-size: 0.875rem;
+      font-weight: 700;
+      color: var(--green-deep);
+      transition: border-color 0.2s ease, background 0.2s ease, transform 0.2s ease;
+      white-space: nowrap;
+    }
+
+    .phone-pill:hover {
+      border-color: var(--green-brand);
+      background: var(--green-soft);
+      transform: translateY(-1px);
+    }
+
+    .phone-pill svg {
+      width: 15px;
+      height: 15px;
+      color: var(--green-dark);
+      flex-shrink: 0;
+    }
+
+    /* Primary CTA with subtle shine sweep */
+    .btn-primary {
+      position: relative;
+      overflow: hidden;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      padding: 9px 16px;
+      border-radius: 10px;
+      border: 1px solid var(--green-deep);
+      background: linear-gradient(135deg, var(--green-dark) 0%, var(--green-deep) 100%);
+      color: #FFFFFF;
+      font-size: 0.88rem;
+      font-weight: 700;
+      cursor: pointer;
+      white-space: nowrap;
+      box-shadow: 0 4px 14px rgba(29, 77, 10, 0.22);
+      transition: transform 0.2s ease, box-shadow 0.2s ease, filter 0.2s ease;
+    }
+
+    .btn-primary::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -120%;
+      width: 65%;
+      height: 100%;
+      background: linear-gradient(105deg, transparent 20%, rgba(255, 255, 255, 0.28) 50%, transparent 80%);
+      transform: skewX(-18deg);
+      transition: left 0.55s ease;
+      pointer-events: none;
+    }
+
+    .btn-primary:hover::after {
+      left: 140%;
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 8px 20px rgba(29, 77, 10, 0.28);
+    }
+
+    .btn-gold {
+      position: relative;
+      overflow: hidden;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      padding: 10px 18px;
+      border-radius: 10px;
+      border: 1px solid var(--gold-deep);
+      background: linear-gradient(135deg, #F7C625 0%, var(--gold-brand) 100%);
+      color: #142117;
+      font-size: 0.9rem;
+      font-weight: 700;
+      cursor: pointer;
+      white-space: nowrap;
+      box-shadow: 0 4px 14px rgba(229, 164, 0, 0.26);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .btn-gold:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 8px 20px rgba(229, 164, 0, 0.34);
+    }
+
+    .btn-outline {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 7px;
+      padding: 9px 15px;
+      border-radius: 10px;
+      border: 1px solid var(--border-strong);
+      background: var(--surface);
+      color: var(--ink);
+      font-size: 0.88rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: border-color 0.18s ease, background 0.18s ease, color 0.18s ease;
+    }
+
+    .btn-outline:hover {
+      border-color: var(--green-brand);
+      background: var(--green-tint);
+      color: var(--green-deep);
+    }
+
+    .mobile-menu-btn {
+      display: none;
+      align-items: center;
+      justify-content: center;
+      width: 40px;
+      height: 40px;
+      border-radius: 10px;
+      border: 1px solid var(--border);
+      background: var(--surface);
+      color: var(--ink);
+      cursor: pointer;
+    }
+
+    .mobile-drawer {
+      display: none;
+      position: fixed;
+      inset: var(--header-h) 0 0 0;
+      z-index: 85;
+      background: rgba(20, 33, 23, 0.45);
+      backdrop-filter: blur(6px);
+    }
+
+    .mobile-drawer.open {
+      display: block;
+    }
+
+    .mobile-drawer-panel {
+      background: var(--surface);
+      border-bottom: 1px solid var(--border);
+      padding: 18px 20px 24px;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      box-shadow: var(--shadow-lg);
+    }
+
+    .mobile-drawer-panel a.nav-item {
+      padding: 12px 14px;
+      border-radius: 10px;
+      font-weight: 600;
+      font-size: 1rem;
+      color: var(--ink);
+      background: var(--surface-alt);
+      border: 1px solid var(--border);
+    }
+
+    .mobile-drawer-actions {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 10px;
+      margin-top: 8px;
+    }
+
+    /* ========================
+       CATALOG-FIRST ABOVE-THE-FOLD HERO + FINDER
+       ======================== */
+    .catalog-hero {
+      position: relative;
+      padding: 18px 0 26px;
+      overflow: hidden;
+      background: linear-gradient(180deg, #FFFFFF 0%, #F5F8F3 100%);
+      border-bottom: 1px solid var(--border);
+    }
+
+    /* Subtle animated green & gold ambient gradient glow */
+    .ambient-glow {
+      position: absolute;
+      inset: -40px -10% auto -10%;
+      height: 290px;
+      pointer-events: none;
+      z-index: 0;
+      background:
+        radial-gradient(ellipse 38% 70% at 18% 28%, rgba(88, 166, 24, 0.16) 0%, transparent 72%),
+        radial-gradient(ellipse 36% 72% at 82% 24%, rgba(242, 183, 5, 0.18) 0%, transparent 72%),
+        radial-gradient(ellipse 40% 60% at 50% 0%, rgba(88, 166, 24, 0.08) 0%, transparent 75%);
+      animation: ambientFloat 14s ease-in-out infinite alternate;
+      will-change: transform;
+    }
+
+    @keyframes ambientFloat {
+      0% { transform: translate3d(-1.5%, 0, 0) scale(1); }
+      100% { transform: translate3d(1.5%, 6px, 0) scale(1.03); }
+    }
+
+    .catalog-hero .container {
+      position: relative;
+      z-index: 1;
+    }
+
+    .finder-top-row {
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-between;
+      gap: 16px;
+      margin-bottom: 12px;
+      flex-wrap: wrap;
+    }
+
+    .finder-title-wrap {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+
+    .brand-eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 0.78rem;
+      font-weight: 700;
+      color: var(--green-deep);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    .eyebrow-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--green-brand);
+      box-shadow: 0 0 0 3px rgba(88, 166, 24, 0.22);
+    }
+
+    .eyebrow-gold {
+      display: inline-flex;
+      align-items: center;
+      padding: 2px 8px;
+      border-radius: 999px;
+      background: var(--gold-soft);
+      border: 1px solid var(--gold-border);
+      color: #6B4B00;
+      font-size: 0.72rem;
+      font-weight: 700;
+      text-transform: none;
+      letter-spacing: 0;
+    }
+
+    .finder-heading {
+      font-size: clamp(1.32rem, 2.2vw, 1.72rem);
+      font-weight: 800;
+      line-height: 1.18;
+      color: var(--ink);
+    }
+
+    .finder-heading span {
+      color: var(--green-dark);
+    }
+
+    .finder-meta-badges {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    .meta-stat {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 5px 11px;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.9);
+      border: 1px solid var(--border);
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: var(--ink-secondary);
+      box-shadow: var(--shadow-sm);
+    }
+
+    .meta-stat strong {
+      color: var(--green-deep);
+    }
+
+    /* Instant Product Finder Bar */
+    .finder-bar-card {
+      background: rgba(255, 255, 255, 0.94);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border: 1px solid var(--border-strong);
+      border-radius: var(--radius-md);
+      padding: 12px 14px;
+      box-shadow: 0 10px 30px rgba(29, 77, 10, 0.08);
+      margin-bottom: 16px;
+    }
+
+    .finder-controls {
+      display: grid;
+      grid-template-columns: minmax(280px, 1.15fr) auto;
+      gap: 12px;
+      align-items: center;
+    }
+
+    .search-box-wrap {
+      position: relative;
+      width: 100%;
+    }
+
+    .search-icon {
+      position: absolute;
+      left: 14px;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 18px;
+      height: 18px;
+      color: var(--green-dark);
+      pointer-events: none;
+    }
+
+    .search-input {
+      width: 100%;
+      height: 44px;
+      padding: 0 40px 0 42px;
+      border-radius: 11px;
+      border: 1.5px solid var(--border-strong);
+      background: #FFFFFF;
+      font-size: 0.94rem;
+      font-weight: 500;
+      color: var(--ink);
+      transition: border-color 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .search-input::placeholder {
+      color: var(--ink-muted);
+    }
+
+    .search-input:focus {
+      outline: none;
+      border-color: var(--green-brand);
+      box-shadow: 0 0 0 4px rgba(88, 166, 24, 0.16);
+    }
+
+    .search-clear-btn {
+      position: absolute;
+      right: 10px;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 26px;
+      height: 26px;
+      border-radius: 50%;
+      border: none;
+      background: var(--green-soft);
+      color: var(--green-deep);
+      display: none;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      font-size: 0.85rem;
+      font-weight: 700;
+    }
+
+    .search-clear-btn.visible {
+      display: inline-flex;
+    }
+
+    /* Live Autocomplete Dropdown */
+    .search-dropdown {
+      position: absolute;
+      top: calc(100% + 6px);
+      left: 0;
+      right: 0;
+      z-index: 60;
+      background: #FFFFFF;
+      border: 1px solid var(--border-strong);
+      border-radius: 12px;
+      box-shadow: var(--shadow-lg);
+      padding: 6px;
+      display: none;
+      max-height: 310px;
+      overflow-y: auto;
+    }
+
+    .search-dropdown.open {
+      display: block;
+    }
+
+    .dropdown-item {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 8px 10px;
+      border-radius: 9px;
+      border: none;
+      background: transparent;
+      text-align: left;
+      cursor: pointer;
+      transition: background 0.15s ease;
+    }
+
+    .dropdown-item:hover,
+    .dropdown-item:focus-visible {
+      background: var(--green-tint);
+      outline: none;
+    }
+
+    .dropdown-thumb {
+      width: 38px;
+      height: 38px;
+      border-radius: 7px;
+      border: 1px solid var(--border);
+      background: #FFFFFF;
+      object-fit: contain;
+      padding: 3px;
+      flex-shrink: 0;
+    }
+
+    .dropdown-info {
+      min-width: 0;
+      flex: 1;
+    }
+
+    .dropdown-title {
+      font-size: 0.88rem;
+      font-weight: 700;
+      color: var(--ink);
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    .dropdown-sub {
+      font-size: 0.76rem;
+      color: var(--ink-muted);
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    .dropdown-action {
+      font-size: 0.74rem;
+      font-weight: 700;
+      color: var(--green-dark);
+      background: var(--green-soft);
+      padding: 3px 8px;
+      border-radius: 999px;
+      flex-shrink: 0;
+    }
+
+    .quick-search-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      margin-top: 10px;
+      padding-top: 10px;
+      border-top: 1px dashed var(--border);
+      flex-wrap: wrap;
+    }
+
+    /* Animated Pill Filter Bar */
+    .filter-pills-wrap {
+      position: relative;
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      padding: 4px;
+      border-radius: 11px;
+      background: var(--bg);
+      border: 1px solid var(--border);
+      flex-wrap: wrap;
+    }
+
+    .pill-indicator {
+      position: absolute;
+      top: 4px;
+      left: 4px;
+      height: calc(100% - 8px);
+      border-radius: 8px;
+      background: linear-gradient(135deg, var(--green-dark) 0%, var(--green-deep) 100%);
+      box-shadow: 0 3px 10px rgba(29, 77, 10, 0.24);
+      transition: transform 0.26s cubic-bezier(0.22, 1, 0.36, 1), width 0.26s cubic-bezier(0.22, 1, 0.36, 1), opacity 0.2s ease;
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    .filter-pill {
+      position: relative;
+      z-index: 1;
+      padding: 7px 12px;
+      border-radius: 8px;
+      border: none;
+      background: transparent;
+      font-size: 0.82rem;
+      font-weight: 700;
+      color: var(--ink-secondary);
+      cursor: pointer;
+      transition: color 0.2s ease;
+      white-space: nowrap;
+    }
+
+    .filter-pill:hover {
+      color: var(--green-deep);
+    }
+
+    .filter-pill.active {
+      color: #FFFFFF;
+    }
+
+    .quick-hints {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      flex-wrap: wrap;
+      font-size: 0.78rem;
+      color: var(--ink-muted);
+    }
+
+    .hint-chip {
+      padding: 3px 9px;
+      border-radius: 999px;
+      border: 1px solid var(--border);
+      background: #FFFFFF;
+      font-size: 0.76rem;
+      font-weight: 600;
+      color: var(--ink-secondary);
+      cursor: pointer;
+      transition: all 0.16s ease;
+    }
+
+    .hint-chip:hover {
+      border-color: var(--gold-brand);
+      background: var(--gold-soft);
+      color: var(--ink);
+    }
+
+    .match-counter {
+      font-size: 0.82rem;
+      font-weight: 700;
+      color: var(--green-deep);
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .match-counter .badge-count {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-width: 22px;
+      height: 22px;
+      padding: 0 6px;
+      border-radius: 999px;
+      background: var(--gold-brand);
+      color: #142117;
+      font-size: 0.76rem;
+      font-weight: 800;
+    }
+
+    /* ========================
+       8 PRODUCT CATEGORIES GRID (ABOVE THE FOLD)
+       ======================== */
+    .catalog-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 14px;
+    }
+
+    .cat-card {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      background: #FFFFFF;
+      border-radius: var(--radius-md);
+      border: 1px solid var(--border);
+      padding: 12px;
+      cursor: pointer;
+      overflow: hidden;
+      transition: transform 0.24s cubic-bezier(0.22, 1, 0.36, 1),
+                  box-shadow 0.24s ease,
+                  border-color 0.24s ease;
+      box-shadow: var(--shadow-sm);
+      opacity: 1; /* Always 100% visible immediately above the fold */
+    }
+
+    /* Cursor-tracking luminous green-gold spotlight */
+    .cat-card::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      border-radius: inherit;
+      background: radial-gradient(
+        260px circle at var(--mx, 50%) var(--my, 50%),
+        rgba(88, 166, 24, 0.13),
+        rgba(242, 183, 5, 0.08) 42%,
+        transparent 72%
+      );
+      opacity: 0;
+      transition: opacity 0.25s ease;
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    /* Top subtle accent bar */
+    .cat-card::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 3px;
+      background: linear-gradient(90deg, var(--green-brand) 0%, var(--gold-brand) 100%);
+      opacity: 0;
+      transition: opacity 0.22s ease;
+      z-index: 2;
+    }
+
+    .cat-card:hover {
+      transform: translateY(-4px);
+      border-color: rgba(88, 166, 24, 0.65);
+      box-shadow: 0 14px 32px rgba(29, 77, 10, 0.13), 0 0 0 1px rgba(242, 183, 5, 0.35);
+    }
+
+    .cat-card:hover::before,
+    .cat-card:hover::after {
+      opacity: 1;
+    }
+
+    .cat-card:focus-visible {
+      outline: 2px solid var(--green-brand);
+      outline-offset: 2px;
+    }
+
+    .cat-card.hidden {
+      display: none;
+    }
+
+    .cat-card-media {
+      position: relative;
+      z-index: 1;
+      height: 118px;
+      border-radius: 10px;
+      background: #FFFFFF;
+      border: 1px solid #EEF3EB;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 8px;
+      margin-bottom: 10px;
+      overflow: hidden;
+    }
+
+    .cat-card-media img {
+      max-height: 100%;
+      max-width: 100%;
+      width: auto;
+      height: auto;
+      object-fit: contain;
+      transition: transform 0.35s cubic-bezier(0.22, 1, 0.36, 1);
+    }
+
+    .cat-card:hover .cat-card-media img {
+      transform: scale(1.07);
+    }
+
+    .cat-tag {
+      position: absolute;
+      top: 7px;
+      left: 7px;
+      padding: 2px 8px;
+      border-radius: 999px;
+      font-size: 0.68rem;
+      font-weight: 800;
+      letter-spacing: 0.02em;
+      background: var(--green-soft);
+      color: var(--green-deep);
+      border: 1px solid rgba(88, 166, 24, 0.28);
+    }
+
+    .cat-tag.tag-gold {
+      background: var(--gold-soft);
+      color: #6B4B00;
+      border-color: var(--gold-border);
+    }
+
+    .cat-card-body {
+      position: relative;
+      z-index: 1;
+      display: flex;
+      flex-direction: column;
+      flex: 1;
+    }
+
+    .cat-card-title {
+      font-size: 0.95rem;
+      font-weight: 800;
+      line-height: 1.25;
+      color: var(--ink);
+      margin-bottom: 7px;
+      min-height: 2.5em;
+    }
+
+    .cat-chips {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 5px;
+      margin-bottom: 10px;
+    }
+
+    .cat-chip {
+      font-size: 0.72rem;
+      font-weight: 600;
+      padding: 2px 7px;
+      border-radius: 6px;
+      background: var(--bg);
+      color: var(--ink-secondary);
+      border: 1px solid var(--border);
+    }
+
+    .cat-card-footer {
+      margin-top: auto;
+      padding-top: 8px;
+      border-top: 1px solid #EEF3EB;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 8px;
+    }
+
+    .cat-quick-link {
+      font-size: 0.8rem;
+      font-weight: 700;
+      color: var(--green-dark);
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      transition: gap 0.2s ease, color 0.2s ease;
+    }
+
+    .cat-card:hover .cat-quick-link {
+      gap: 7px;
+      color: var(--green-deep);
+    }
+
+    .cat-count-hint {
+      font-size: 0.72rem;
+      font-weight: 600;
+      color: var(--ink-muted);
+    }
+
+    mark.hl {
+      background: #FFE57F;
+      color: #142117;
+      padding: 0 2px;
+      border-radius: 3px;
+      font-weight: 700;
+    }
+
+    .empty-state {
+      display: none;
+      text-align: center;
+      padding: 36px 20px;
+      background: #FFFFFF;
+      border: 1px dashed var(--border-strong);
+      border-radius: var(--radius-md);
+      margin-top: 8px;
+    }
+
+    .empty-state.visible {
+      display: block;
+    }
+
+    .empty-state h3 {
+      font-size: 1.05rem;
+      margin-bottom: 6px;
+    }
+
+    .empty-state p {
+      font-size: 0.9rem;
+      color: var(--ink-muted);
+      margin-bottom: 14px;
+    }
+
+    /* ========================
+       SECTIONS SHARED STYLING
+       ======================== */
+    .section {
+      padding: 58px 0;
+    }
+
+    .section-white {
+      background: #FFFFFF;
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .section-head {
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-between;
+      gap: 16px;
+      margin-bottom: 26px;
+      flex-wrap: wrap;
+    }
+
+    .section-eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 0.76rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: var(--green-dark);
+      margin-bottom: 6px;
+    }
+
+    .section-title {
+      font-size: clamp(1.45rem, 2.4vw, 1.95rem);
+      font-weight: 800;
+      line-height: 1.2;
+    }
+
+    .section-sub {
+      font-size: 0.96rem;
+      color: var(--ink-muted);
+      max-width: 620px;
+      margin-top: 6px;
+    }
+
+    /* ========================
+       ELTURGUS.LT SECTION (7 CATEGORIES)
+       ======================== */
+    .elturgus-banner {
+      background: linear-gradient(135deg, #163B08 0%, #245B0E 55%, #2D6E12 100%);
+      border-radius: var(--radius-lg);
+      padding: 32px;
+      color: #FFFFFF;
+      position: relative;
+      overflow: hidden;
+      box-shadow: var(--shadow-md);
+    }
+
+    .elturgus-banner::before {
+      content: '';
+      position: absolute;
+      top: -60px;
+      right: -40px;
+      width: 300px;
+      height: 300px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(242, 183, 5, 0.28) 0%, transparent 70%);
+      pointer-events: none;
+    }
+
+    .elturgus-top {
+      position: relative;
+      z-index: 1;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+      flex-wrap: wrap;
+      margin-bottom: 24px;
+    }
+
+    .elturgus-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 4px 11px;
+      border-radius: 999px;
+      background: rgba(242, 183, 5, 0.2);
+      border: 1px solid rgba(242, 183, 5, 0.5);
+      color: #FFE07A;
+      font-size: 0.78rem;
+      font-weight: 700;
+      margin-bottom: 8px;
+    }
+
+    .elturgus-top h2 {
+      color: #FFFFFF;
+      font-size: clamp(1.4rem, 2.3vw, 1.85rem);
+      margin-bottom: 6px;
+    }
+
+    .elturgus-top p {
+      color: rgba(255, 255, 255, 0.86);
+      font-size: 0.94rem;
+      max-width: 600px;
+    }
+
+    .elturgus-grid {
+      position: relative;
+      z-index: 1;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(168px, 1fr));
+      gap: 10px;
+    }
+
+    .elturgus-item {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      gap: 8px;
+      padding: 14px;
+      border-radius: 12px;
+      background: rgba(255, 255, 255, 0.1);
+      border: 1px solid rgba(255, 255, 255, 0.18);
+      backdrop-filter: blur(8px);
+      color: #FFFFFF;
+      transition: transform 0.2s ease, background 0.2s ease, border-color 0.2s ease;
+    }
+
+    .elturgus-item:hover {
+      transform: translateY(-3px);
+      background: rgba(255, 255, 255, 0.17);
+      border-color: var(--gold-brand);
+    }
+
+    .elturgus-item-num {
+      font-size: 0.72rem;
+      font-weight: 800;
+      color: #FFD95C;
+      letter-spacing: 0.04em;
+    }
+
+    .elturgus-item-title {
+      font-size: 0.9rem;
+      font-weight: 700;
+      line-height: 1.3;
+    }
+
+    .elturgus-item-arrow {
+      font-size: 0.76rem;
+      color: rgba(255, 255, 255, 0.78);
+      font-weight: 600;
+    }
+
+    /* ========================
+       ABOUT + PARTNERS SECTION
+       ======================== */
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1.15fr 0.85fr;
+      gap: 28px;
+      align-items: center;
+    }
+
+    .about-highlights {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 12px;
+      margin-top: 20px;
+    }
+
+    .highlight-box {
+      padding: 15px;
+      border-radius: 12px;
+      background: var(--surface-alt);
+      border: 1px solid var(--border);
+    }
+
+    .highlight-val {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: 1.35rem;
+      font-weight: 800;
+      color: var(--green-deep);
+      margin-bottom: 2px;
+    }
+
+    .highlight-lbl {
+      font-size: 0.83rem;
+      color: var(--ink-muted);
+      font-weight: 500;
+    }
+
+    .about-visual-card {
+      position: relative;
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      border: 1px solid var(--border);
+      background: var(--surface-alt);
+      box-shadow: var(--shadow-md);
+    }
+
+    .about-visual-card img {
+      width: 100%;
+      height: 290px;
+      object-fit: cover;
+    }
+
+    .about-visual-caption {
+      padding: 16px 18px;
+      background: #FFFFFF;
+      border-top: 1px solid var(--border);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+    }
+
+    .about-visual-caption strong {
+      font-size: 0.92rem;
+      color: var(--ink);
+      display: block;
+    }
+
+    .about-visual-caption span {
+      font-size: 0.8rem;
+      color: var(--ink-muted);
+    }
+
+    .partners-strip {
+      margin-top: 32px;
+      padding-top: 26px;
+      border-top: 1px solid var(--border);
+    }
+
+    .partners-label {
+      font-size: 0.82rem;
+      font-weight: 700;
+      color: var(--ink-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-bottom: 14px;
+    }
+
+    .partners-list {
+      display: grid;
+      grid-template-columns: repeat(6, minmax(0, 1fr));
+      gap: 10px;
+    }
+
+    .partner-pill {
+      padding: 12px 10px;
+      border-radius: 10px;
+      background: var(--bg);
+      border: 1px solid var(--border);
+      text-align: center;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: 0.86rem;
+      font-weight: 800;
+      color: var(--ink-secondary);
+      transition: border-color 0.2s ease, background 0.2s ease, color 0.2s ease;
+    }
+
+    .partner-pill span {
+      display: block;
+      font-family: 'Inter', sans-serif;
+      font-size: 0.7rem;
+      font-weight: 600;
+      color: var(--ink-muted);
+      margin-top: 2px;
+    }
+
+    .partner-pill:hover {
+      border-color: var(--green-brand);
+      background: var(--green-tint);
+      color: var(--green-deep);
+    }
+
+    /* ========================
+       KAINOS IR KONTAKTAI (ZERO OVERFLOW AT 375PX)
+       ======================== */
+    .prices-contact-grid {
+      display: grid;
+      grid-template-columns: 1.08fr 0.92fr;
+      gap: 24px;
+      align-items: start;
+    }
+
+    .panel-card {
+      background: #FFFFFF;
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 24px;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .panel-card.flash-highlight {
+      box-shadow: 0 0 0 3px var(--green-brand), var(--shadow-md);
+      transition: box-shadow 0.35s ease;
+    }
+
+    .price-list {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      margin-top: 16px;
+    }
+
+    .price-row {
+      display: grid;
+      grid-template-columns: 1fr auto auto;
+      gap: 12px;
+      align-items: center;
+      padding: 12px 14px;
+      border-radius: 12px;
+      background: var(--surface-alt);
+      border: 1px solid var(--border);
+      transition: border-color 0.2s ease, background 0.2s ease;
+    }
+
+    .price-row:hover {
+      border-color: var(--green-brand);
+      background: var(--green-tint);
+    }
+
+    .price-name {
+      font-size: 0.9rem;
+      font-weight: 700;
+      color: var(--ink);
+    }
+
+    .price-spec {
+      font-size: 0.78rem;
+      color: var(--ink-muted);
+      margin-top: 2px;
+    }
+
+    .price-val {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: 0.92rem;
+      font-weight: 800;
+      color: var(--green-deep);
+      white-space: nowrap;
+    }
+
+    .price-ask-btn {
+      padding: 6px 11px;
+      border-radius: 8px;
+      border: 1px solid var(--border-strong);
+      background: #FFFFFF;
+      color: var(--green-deep);
+      font-size: 0.78rem;
+      font-weight: 700;
+      cursor: pointer;
+      white-space: nowrap;
+      transition: all 0.18s ease;
+    }
+
+    .price-ask-btn:hover {
+      background: var(--green-dark);
+      border-color: var(--green-dark);
+      color: #FFFFFF;
+    }
+
+    .contact-cards-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 10px;
+      margin-top: 18px;
+    }
+
+    .contact-item {
+      display: flex;
+      flex-direction: column;
+      gap: 3px;
+      padding: 12px 14px;
+      border-radius: 12px;
+      background: var(--bg);
+      border: 1px solid var(--border);
+      transition: border-color 0.2s ease, background 0.2s ease;
+      min-width: 0;
+    }
+
+    .contact-item:hover {
+      border-color: var(--green-brand);
+      background: var(--green-tint);
+    }
+
+    .contact-item-label {
+      font-size: 0.72rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      color: var(--ink-muted);
+    }
+
+    .contact-item-val {
+      font-size: 0.88rem;
+      font-weight: 700;
+      color: var(--green-deep);
+      word-break: break-word;
+    }
+
+    .contact-item.full-span {
+      grid-column: 1 / -1;
+    }
+
+    /* Inquiry Form */
+    .form-grid {
+      display: flex;
+      flex-direction: column;
+      gap: 13px;
+      margin-top: 16px;
+    }
+
+    .form-group label {
+      display: block;
+      font-size: 0.82rem;
+      font-weight: 700;
+      color: var(--ink-secondary);
+      margin-bottom: 5px;
+    }
+
+    .form-control {
+      width: 100%;
+      padding: 10px 13px;
+      border-radius: 10px;
+      border: 1.5px solid var(--border-strong);
+      background: #FFFFFF;
+      font-size: 0.92rem;
+      color: var(--ink);
+      transition: border-color 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .form-control:focus {
+      outline: none;
+      border-color: var(--green-brand);
+      box-shadow: 0 0 0 3px rgba(88, 166, 24, 0.16);
+    }
+
+    textarea.form-control {
+      min-height: 98px;
+      resize: vertical;
+    }
+
+    .form-status {
+      display: none;
+      padding: 12px 14px;
+      border-radius: 10px;
+      background: var(--green-soft);
+      border: 1px solid var(--green-brand);
+      color: var(--green-deep);
+      font-size: 0.88rem;
+      font-weight: 600;
+    }
+
+    .form-status.visible {
+      display: block;
+    }
+
+    /* ========================
+       QUICK-VIEW GLASSMORPHIC MODAL
+       ======================== */
+    .modal-overlay {
+      position: fixed;
+      inset: 0;
+      z-index: 200;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+      background: rgba(18, 30, 20, 0.56);
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity 0.24s ease, visibility 0.24s ease;
+    }
+
+    .modal-overlay.open {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    .modal-dialog {
+      width: 100%;
+      max-width: 760px;
+      max-height: 90vh;
+      overflow-y: auto;
+      background: rgba(255, 255, 255, 0.97);
+      border: 1px solid rgba(220, 230, 215, 0.95);
+      border-radius: var(--radius-lg);
+      box-shadow: 0 28px 70px rgba(15, 28, 17, 0.28);
+      transform: translateY(16px) scale(0.98);
+      transition: transform 0.26s cubic-bezier(0.22, 1, 0.36, 1);
+      position: relative;
+    }
+
+    .modal-overlay.open .modal-dialog {
+      transform: translateY(0) scale(1);
+    }
+
+    .modal-header {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 14px;
+      padding: 20px 22px 16px;
+      border-bottom: 1px solid var(--border);
+      background: linear-gradient(135deg, rgba(236, 246, 228, 0.7) 0%, rgba(255, 248, 220, 0.5) 100%);
+    }
+
+    .modal-close {
+      width: 36px;
+      height: 36px;
+      border-radius: 10px;
+      border: 1px solid var(--border-strong);
+      background: #FFFFFF;
+      color: var(--ink);
+      font-size: 1.25rem;
+      line-height: 1;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      flex-shrink: 0;
+      transition: background 0.16s ease, border-color 0.16s ease;
+    }
+
+    .modal-close:hover {
+      background: var(--green-soft);
+      border-color: var(--green-brand);
+    }
+
+    .modal-body {
+      padding: 20px 22px 22px;
+    }
+
+    .modal-top-split {
+      display: grid;
+      grid-template-columns: 200px 1fr;
+      gap: 20px;
+      align-items: center;
+      margin-bottom: 18px;
+    }
+
+    .modal-img-box {
+      height: 165px;
+      border-radius: 14px;
+      background: #FFFFFF;
+      border: 1px solid var(--border);
+      padding: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .modal-img-box img {
+      max-height: 100%;
+      max-width: 100%;
+      object-fit: contain;
+    }
+
+    .modal-desc {
+      font-size: 0.94rem;
+      color: var(--ink-secondary);
+      margin-bottom: 12px;
+    }
+
+    .modal-specs-pills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+    }
+
+    .modal-spec-pill {
+      padding: 4px 10px;
+      border-radius: 999px;
+      background: var(--green-soft);
+      color: var(--green-deep);
+      font-size: 0.78rem;
+      font-weight: 700;
+    }
+
+    .modal-products-title {
+      font-size: 0.84rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: var(--ink-muted);
+      margin-bottom: 10px;
+    }
+
+    .modal-products-list {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 10px;
+      margin-bottom: 20px;
+    }
+
+    .modal-product-item {
+      padding: 11px 13px;
+      border-radius: 11px;
+      border: 1px solid var(--border);
+      background: var(--surface-alt);
+      display: flex;
+      flex-direction: column;
+      gap: 3px;
+    }
+
+    .modal-product-item strong {
+      font-size: 0.88rem;
+      color: var(--ink);
+    }
+
+    .modal-product-item span {
+      font-size: 0.78rem;
+      color: var(--ink-muted);
+    }
+
+    .modal-footer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      padding-top: 16px;
+      border-top: 1px solid var(--border);
+      flex-wrap: wrap;
+    }
+
+    .modal-footer-actions {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    /* ========================
+       FOOTER
+       ======================== */
+    .site-footer {
+      background: #142117;
+      color: rgba(255, 255, 255, 0.84);
+      padding: 40px 0 26px;
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1.3fr 1fr 1fr;
+      gap: 24px;
+      padding-bottom: 26px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+    }
+
+    .footer-logo-wrap {
+      display: inline-flex;
+      padding: 8px 12px;
+      border-radius: 10px;
+      background: #FFFFFF;
+      margin-bottom: 12px;
+    }
+
+    .footer-logo-wrap img {
+      height: 30px;
+      width: auto;
+    }
+
+    .footer-col h4 {
+      color: #FFFFFF;
+      font-size: 0.92rem;
+      margin-bottom: 10px;
+    }
+
+    .footer-links {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 7px;
+      font-size: 0.86rem;
+    }
+
+    .footer-links a:hover {
+      color: var(--gold-brand);
+    }
+
+    .footer-bottom {
+      padding-top: 18px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      flex-wrap: wrap;
+      font-size: 0.82rem;
+      color: rgba(255, 255, 255, 0.65);
+    }
+
+    /* Progressive scroll reveal ONLY for below-the-fold sections */
+    .reveal-ready .reveal {
+      opacity: 0;
+      transform: translateY(16px);
+      transition: opacity 0.45s ease, transform 0.45s ease;
+    }
+
+    .reveal-ready .reveal.is-visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* ========================
+       RESPONSIVE BREAKPOINTS
+       ======================== */
+    @media (max-width: 1120px) {
+      .catalog-grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+      }
+      .finder-controls {
+        grid-template-columns: 1fr;
+      }
+      .partners-list {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+      }
+    }
+
+    @media (max-width: 920px) {
+      .main-nav,
+      .header-actions .phone-pill {
+        display: none;
+      }
+      .mobile-menu-btn {
+        display: inline-flex;
+      }
+      .about-grid,
+      .prices-contact-grid,
+      .footer-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 720px) {
+      .catalog-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 10px;
+      }
+      .modal-top-split,
+      .modal-products-list {
+        grid-template-columns: 1fr;
+      }
+      .elturgus-banner {
+        padding: 22px 18px;
+      }
+      .panel-card {
+        padding: 18px 16px;
+      }
+      .price-row {
+        grid-template-columns: 1fr;
+        gap: 8px;
+      }
+      .price-row-bottom {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .container {
+        padding: 0 14px;
+      }
+      .brand-link img {
+        height: 30px;
+      }
+      .header-actions .btn-primary {
+        padding: 7px 11px;
+        font-size: 0.78rem;
+      }
+      .catalog-grid {
+        grid-template-columns: 1fr;
+      }
+      .cat-card-media {
+        height: 132px;
+      }
+      .cat-card-title {
+        min-height: auto;
+      }
+      .filter-pills-wrap {
+        width: 100%;
+      }
+      .filter-pill {
+        padding: 6px 9px;
+        font-size: 0.77rem;
+      }
+      .contact-cards-grid,
+      .about-highlights,
+      .partners-list {
+        grid-template-columns: 1fr;
+      }
+      .pill-indicator {
+        display: none;
+      }
+      .filter-pill.active {
+        background: linear-gradient(135deg, var(--green-dark) 0%, var(--green-deep) 100%);
+        color: #FFFFFF;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+      }
+      .reveal-ready .reveal {
+        opacity: 1 !important;
+        transform: none !important;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ========================
+       STICKY GLASS HEADER
+       ======================== -->
+  <header class="site-header" id="site-header">
+    <div class="container header-inner">
+      <a href="#produktai" class="brand-link" aria-label="UAB Scan Technika pradžia">
+        <img src="assets/logo.png" alt="UAB Scan Technika logotipas" />
+      </a>
+
+      <nav class="main-nav" aria-label="Pagrindinė navigacija">
+        <a href="#apie-mus">Apie mus</a>
+        <a href="#produktai">Produktai</a>
+        <a href="#kainos">Kainos</a>
+        <a href="#partneriai">Partneriai</a>
+        <a href="#kontaktai">Kontaktai</a>
+      </nav>
+
+      <div class="header-actions">
+        <a href="tel:+37067640057" class="phone-pill" aria-label="Skambinti +370 676 40057">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          <span>+370 676 40057</span>
+        </a>
+        <a href="https://www.elturgus.lt/" target="_blank" rel="noopener noreferrer" class="btn-primary">
+          <span>El. parduotuvė</span>
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+        </a>
+        <button type="button" class="mobile-menu-btn" id="mobile-menu-btn" aria-label="Atidaryti meniu" aria-expanded="false" aria-controls="mobile-drawer">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Navigation Drawer -->
+  <div class="mobile-drawer" id="mobile-drawer" aria-hidden="true">
+    <div class="mobile-drawer-panel">
+      <a href="#apie-mus" class="nav-item mobile-nav-link">Apie mus</a>
+      <a href="#produktai" class="nav-item mobile-nav-link">Produktai</a>
+      <a href="#kainos" class="nav-item mobile-nav-link">Kainos</a>
+      <a href="#partneriai" class="nav-item mobile-nav-link">Partneriai</a>
+      <a href="#kontaktai" class="nav-item mobile-nav-link">Kontaktai</a>
+      <div class="mobile-drawer-actions">
+        <a href="tel:+37067640057" class="btn-outline">Skambinti: +370 676 40057</a>
+        <a href="https://www.elturgus.lt/" target="_blank" rel="noopener noreferrer" class="btn-primary">El. parduotuvė (elturgus.lt)</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- ========================
+       CATALOG-FIRST ABOVE-THE-FOLD: INSTANT FINDER + ALL 8 CATEGORIES
+       ======================== -->
+  <main>
+    <section class="catalog-hero" id="produktai" aria-label="Greita produktų paieška ir katalogas">
+      <div class="ambient-glow" aria-hidden="true"></div>
+      <div class="container">
+        <div class="finder-top-row">
+          <div class="finder-title-wrap">
+            <div class="brand-eyebrow">
+              <span class="eyebrow-dot" aria-hidden="true"></span>
+              <span>UAB „Scan Technika“ · Nuo 2000 m.</span>
+              <span class="eyebrow-gold">Itališki komponentai</span>
+            </div>
+            <h1 class="finder-heading">
+              Hidraulinės ir mechaninės perdavimo sistemos — <span>raskite dalis per kelias sekundes</span>
+            </h1>
+          </div>
+          <div class="finder-meta-badges">
+            <span class="meta-stat"><strong>Kardanai</strong> ir kryžmės</span>
+            <span class="meta-stat"><strong>Hidraulika</strong> ir žarnos</span>
+            <span class="meta-stat">Žiežmariai · Pristatymas visoje LT</span>
+          </div>
+        </div>
+
+        <!-- Instant Product Finder Bar -->
+        <div class="finder-bar-card">
+          <div class="finder-controls">
+            <div class="search-box-wrap">
+              <svg class="search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+              <input
+                type="search"
+                id="catalog-search"
+                class="search-input"
+                placeholder="Ieškokite prekės: pvz., kardanas, cilindras, žarna, siurblys, manometras..."
+                autocomplete="off"
+                aria-label="Ieškoti produktų kategorijų ir dalių"
+              />
+              <button type="button" id="search-clear" class="search-clear-btn" aria-label="Išvalyti paiešką">×</button>
+              <div class="search-dropdown" id="search-dropdown" role="listbox" aria-label="Greiti paieškos pasiūlymai"></div>
+            </div>
+
+            <div class="filter-pills-wrap" id="filter-pills" role="tablist" aria-label="Filtruoti pagal grupę">
+              <div class="pill-indicator" id="pill-indicator" aria-hidden="true"></div>
+              <button type="button" class="filter-pill active" data-filter="all" role="tab" aria-selected="true">Visos (8)</button>
+              <button type="button" class="filter-pill" data-filter="kardanai" role="tab" aria-selected="false">Kardanai</button>
+              <button type="button" class="filter-pill" data-filter="hidraulika" role="tab" aria-selected="false">Hidraulika</button>
+              <button type="button" class="filter-pill" data-filter="zarnos" role="tab" aria-selected="false">Žarnos ir jungtys</button>
+              <button type="button" class="filter-pill" data-filter="ukiui" role="tab" aria-selected="false">Priekaboms ir ūkiui</button>
+            </div>
+          </div>
+
+          <div class="quick-search-row">
+            <div class="quick-hints">
+              <span>Dažniausiai ieškoma:</span>
+              <button type="button" class="hint-chip" data-query="kardanas">kardanas</button>
+              <button type="button" class="hint-chip" data-query="cilindras">cilindras</button>
+              <button type="button" class="hint-chip" data-query="žarna">žarna 2SN</button>
+              <button type="button" class="hint-chip" data-query="siurblys">siurblys</button>
+              <button type="button" class="hint-chip" data-query="priekab">priekabos dalys</button>
+            </div>
+            <div class="match-counter" id="match-counter" aria-live="polite">
+              <span>Rodoma</span>
+              <span class="badge-count" id="match-count-num">8</span>
+              <span>iš 8 kategorijų</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- ALL 8 PRODUCT CATEGORIES VISIBLE IMMEDIATELY ABOVE THE FOLD -->
+        <div class="catalog-grid" id="catalog-grid">
+          <!-- Rendered & hydrated immediately by inline script + static fallback inside -->
+        </div>
+
+        <div class="empty-state" id="empty-state">
+          <h3>Pagal jūsų užklausą kategorijų nerasta</h3>
+          <p>Pabandykite trumpesnį raktažodį (pvz., „kardanas“, „cilindras“, „žarna“) arba pateikite užklausą tiesiogiai — padėsime parinkti dalį pagal matmenis.</p>
+          <button type="button" class="btn-outline" id="reset-filters-btn">Rodyti visas 8 kategorijas</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================
+         DEDICATED ELTURGUS.LT SECTION (7 KEY CATEGORIES)
+         ======================== -->
+    <section class="section" aria-label="El. parduotuvė elturgus.lt">
+      <div class="container">
+        <div class="elturgus-banner reveal">
+          <div class="elturgus-top">
+            <div>
+              <div class="elturgus-badge">elturgus.lt · Verslui, ūkininkams</div>
+              <h2>Pirkite internetu — greitas užsakymas visoje Lietuvoje</h2>
+              <p>Mūsų elektroninėje parduotuvėje <strong>elturgus.lt</strong> rasite tūkstančius pozicijų žemės ūkio, miško ir pramoninei technikai su aiškiomis kainomis ir greitu pristatymu.</p>
+            </div>
+            <a href="https://www.elturgus.lt/" target="_blank" rel="noopener noreferrer" class="btn-gold">
+              <span>Atidaryti elturgus.lt</span>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg>
+            </a>
+          </div>
+
+          <div class="elturgus-grid">
+            <a href="https://www.elturgus.lt/" target="_blank" rel="noopener noreferrer" class="elturgus-item">
+              <span class="elturgus-item-num">01</span>
+              <span class="elturgus-item-title">Kardanai ir dalys</span>
+              <span class="elturgus-item-arrow">Peržiūrėti →</span>
+            </a>
+            <a href="https://www.elturgus.lt/" target="_blank" rel="noopener noreferrer" class="elturgus-item">
+              <span class="elturgus-item-num">02</span>
+              <span class="elturgus-item-title">Hidraulika</span>
+              <span class="elturgus-item-arrow">Peržiūrėti →</span>
+            </a>
+            <a href="https://www.elturgus.lt/" target="_blank" rel="noopener noreferrer" class="elturgus-item">
+              <span class="elturgus-item-num">03</span>
+              <span class="elturgus-item-title">Įvairios atsarginės dalys</span>
+              <span class="elturgus-item-arrow">Peržiūrėti →</span>
+            </a>
+            <a href="https://www.elturgus.lt/" target="_blank" rel="noopener noreferrer" class="elturgus-item">
+              <span class="elturgus-item-num">04</span>
+              <span class="elturgus-item-title">Elektros įranga</span>
+              <span class="elturgus-item-arrow">Peržiūrėti →</span>
+            </a>
+            <a href="https://www.elturgus.lt/" target="_blank" rel="noopener noreferrer" class="elturgus-item">
+              <span class="elturgus-item-num">05</span>
+              <span class="elturgus-item-title">Zootechninės prekės</span>
+              <span class="elturgus-item-arrow">Peržiūrėti →</span>
+            </a>
+            <a href="https://www.elturgus.lt/" target="_blank" rel="noopener noreferrer" class="elturgus-item">
+              <span class="elturgus-item-num">06</span>
+              <span class="elturgus-item-title">Tepimas</span>
+              <span class="elturgus-item-arrow">Peržiūrėti →</span>
+            </a>
+            <a href="https://www.elturgus.lt/" target="_blank" rel="noopener noreferrer" class="elturgus-item">
+              <span class="elturgus-item-num">07</span>
+              <span class="elturgus-item-title">LED įranga</span>
+              <span class="elturgus-item-arrow">Peržiūrėti →</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================
+         APIE MUS IR PARTNERIAI
+         ======================== -->
+    <section class="section section-white" id="apie-mus">
+      <div class="container">
+        <div class="about-grid reveal">
+          <div>
+            <div class="section-eyebrow">Apie įmonę</div>
+            <h2 class="section-title">UAB „Scan Technika“ — Danijos–Lietuvos kapitalo įmonė nuo 2000 m.</h2>
+            <p class="section-sub">
+              Jau daugiau nei du dešimtmečius tiekiame patikimas hidraulines ir mechanines perdavimo sistemas ūkininkams, technikos gamintojams ir remonto dirbtuvėms. Specializuojamės aukštos kokybės itališkuose komponentuose: kardaniniuose velenuose, hidrocilindruose, aukšto slėgio žarnose, siurbliuose ir hidraulinėse stotyse.
+            </p>
+
+            <div class="about-highlights">
+              <div class="highlight-box">
+                <div class="highlight-val">Nuo 2000 m.</div>
+                <div class="highlight-lbl">Patirtis hidraulikos ir kardanų srityje</div>
+              </div>
+              <div class="highlight-box">
+                <div class="highlight-val">Itališki komponentai</div>
+                <div class="highlight-lbl">Tiesioginis tiekimas iš Europos gamintojų</div>
+              </div>
+              <div class="highlight-box">
+                <div class="highlight-val">Gamyba vietoje</div>
+                <div class="highlight-lbl">Aukšto slėgio žarnų presavimas Žiežmariuose</div>
+              </div>
+              <div class="highlight-box">
+                <div class="highlight-val">Techninė pagalba</div>
+                <div class="highlight-lbl">Parinkimas pagal brėžinį, kodą ar pavyzdį</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="about-visual-card">
+            <img src="assets/hero-hydraulics.jpg" alt="Hidraulinės sistemos ir komponentai UAB Scan Technika" loading="lazy" />
+            <div class="about-visual-caption">
+              <div>
+                <strong>Sandėlis ir dirbtuvės Žiežmariuose</strong>
+                <span>Sodų g. 36 / Lauko 16, Kaišiadorių r.</span>
+              </div>
+              <a href="#kontaktai" class="btn-outline">Susisiekti</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="partners-strip reveal" id="partneriai">
+          <div class="partners-label">Partneriai ir itališkų komponentų gamintojai</div>
+          <div class="partners-list">
+            <div class="partner-pill">AMA<span>Italija · Kardanai ir dalys</span></div>
+            <div class="partner-pill">Bondioli &amp; Pavesi<span>Italija · Perdavimo sistemos</span></div>
+            <div class="partner-pill">Binotto<span>Italija · Teleskopiniai cilindrai</span></div>
+            <div class="partner-pill">Casappa<span>Italija · Siurbliai ir varikliai</span></div>
+            <div class="partner-pill">Walvoil<span>Italija · Hidrauliniai skirstytuvai</span></div>
+            <div class="partner-pill">Eurocardan<span>Italija · Kardaniniai velenai</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================
+         KAINOS IR KONTAKTAI + UŽKLAUSOS FORMA
+         ======================== -->
+    <section class="section" id="kainos">
+      <div class="container">
+        <div class="section-head reveal">
+          <div>
+            <div class="section-eyebrow">Kainos ir kontaktai</div>
+            <h2 class="section-title">Orientacinės kainos ir greita užklausa</h2>
+            <p class="section-sub">Pasirinkite dominančią poziciją arba parašykite reikiamus matmenis — atsakysime telefonu ar el. paštu tą pačią darbo dieną.</p>
+          </div>
+        </div>
+
+        <div class="prices-contact-grid">
+          <!-- Left: Responsive Prices Preview + Direct Contacts -->
+          <div class="panel-card reveal">
+            <h3>Populiariausios pozicijos ir paslaugos</h3>
+            <p style="font-size: 0.86rem; color: var(--ink-muted); margin-top: 4px;">Tiksli kaina priklauso nuo serijos, ilgio, darbinio slėgio ir užsakymo kiekio.</p>
+
+            <div class="price-list">
+              <div class="price-row">
+                <div>
+                  <div class="price-name">Kardaniniai velenai (1–8 serija)</div>
+                  <div class="price-spec">Standartiniai, su movomis, plataus kampo · itališki</div>
+                </div>
+                <div class="price-val">Pagal seriją</div>
+                <button type="button" class="price-ask-btn" data-prefill-cat="Kardaniniai velenai ir jų dalys" data-prefill-item="Kardaninis velenas (1–8 serija)">Klausti kainos</button>
+              </div>
+
+              <div class="price-row">
+                <div>
+                  <div class="price-name">Aukšto slėgio žarnų presavimas</div>
+                  <div class="price-spec">1SN, 2SN, 4SP, 4SH · antgaliai BSP, JIC, DKOL</div>
+                </div>
+                <div class="price-val">Pagal ilgį ir DN</div>
+                <button type="button" class="price-ask-btn" data-prefill-cat="Aukšto slėgio žarnos ir komponentai" data-prefill-item="Aukšto slėgio žarnos presavimas (2SN / 4SP)">Klausti kainos</button>
+              </div>
+
+              <div class="price-row">
+                <div>
+                  <div class="price-name">Teleskopiniai hidrocilindrai</div>
+                  <div class="price-spec">Savivarčių priekaboms ir sunkvežimiams, 3–6 pakopų</div>
+                </div>
+                <div class="price-val">Individualiai</div>
+                <button type="button" class="price-ask-btn" data-prefill-cat="Teleskopiniai hidrocilindrai" data-prefill-item="Teleskopinis hidrocilindras priekabai">Klausti kainos</button>
+              </div>
+
+              <div class="price-row">
+                <div>
+                  <div class="price-name">Krumpliaratiniai siurbliai ir hidrovarikliai</div>
+                  <div class="price-spec">GR1, GR2, GR3, orbitiniai varikliai, hidraulinės stotys</div>
+                </div>
+                <div class="price-val">Sandėlyje</div>
+                <button type="button" class="price-ask-btn" data-prefill-cat="Siurbliai ir hidrovarikliai" data-prefill-item="Hidraulinis siurblys / hidrovariklis">Klausti kainos</button>
+              </div>
+
+              <div class="price-row">
+                <div>
+                  <div class="price-name">Cilindrų komponentai ir priekabų dalys</div>
+                  <div class="price-spec">Chromuoti strypai, vamzdžiai, ašys, atramos, žiedai</div>
+                </div>
+                <div class="price-val">Didmena / mažmena</div>
+                <button type="button" class="price-ask-btn" data-prefill-cat="Cilindrų dalys" data-prefill-item="Cilindrų dalys / priekabų komponentai">Klausti kainos</button>
+              </div>
+            </div>
+
+            <!-- Clickable Contacts -->
+            <div class="contact-cards-grid" id="kontaktai">
+              <a href="tel:+37067640057" class="contact-item">
+                <span class="contact-item-label">Telefonas</span>
+                <span class="contact-item-val">+370 676 40057</span>
+              </a>
+              <a href="mailto:info@scantechnika.lt" class="contact-item">
+                <span class="contact-item-label">Bendras el. paštas</span>
+                <span class="contact-item-val">info@scantechnika.lt</span>
+              </a>
+              <a href="mailto:mindaugas@scantechnika.lt" class="contact-item">
+                <span class="contact-item-label">Pardavimai / konsultacijos</span>
+                <span class="contact-item-val">mindaugas@scantechnika.lt</span>
+              </a>
+              <a href="https://www.facebook.com/mindaugas.simkunas" target="_blank" rel="noopener noreferrer" class="contact-item">
+                <span class="contact-item-label">Facebook</span>
+                <span class="contact-item-val">Mindaugas Šimkūnas ↗</span>
+              </a>
+              <div class="contact-item full-span">
+                <span class="contact-item-label">Adresas</span>
+                <span class="contact-item-val" style="color: var(--ink);">Sodų g. 36 / Lauko 16, Žiežmariai, LT-56232 Kaišiadorių r.</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Right: 100% Lithuanian Inquiry Form -->
+          <div class="panel-card reveal" id="uzklausos-kortele">
+            <h3>Greita kainos užklausa</h3>
+            <p style="font-size: 0.86rem; color: var(--ink-muted); margin-top: 4px;">Pasirinkus prekę kataloge, kategorija ir pavadinimas užpildomi automatiškai.</p>
+
+            <form class="form-grid" id="inquiry-form" novalidate>
+              <div class="form-group">
+                <label for="inq-name">Vardas arba įmonės pavadinimas *</label>
+                <input type="text" id="inq-name" name="name" class="form-control" placeholder="Pvz., Jonas Kazlauskas / UAB Ūkis" required />
+              </div>
+
+              <div class="form-group">
+                <label for="inq-contact">Telefonas arba el. paštas *</label>
+                <input type="text" id="inq-contact" name="contact" class="form-control" placeholder="+370 6... arba el. paštas" required />
+              </div>
+
+              <div class="form-group">
+                <label for="inq-category">Produktų kategorija</label>
+                <select id="inq-category" name="category" class="form-control">
+                  <option value="">Pasirinkite kategoriją...</option>
+                  <option value="Kardaniniai velenai ir jų dalys">Kardaniniai velenai ir jų dalys</option>
+                  <option value="Aukšto slėgio žarnos ir komponentai">Aukšto slėgio žarnos ir komponentai</option>
+                  <option value="Teleskopiniai hidrocilindrai">Teleskopiniai hidrocilindrai</option>
+                  <option value="Siurbliai ir hidrovarikliai">Siurbliai ir hidrovarikliai</option>
+                  <option value="Cilindrų dalys">Cilindrų dalys</option>
+                  <option value="Manometrai, vakumetrai">Manometrai, vakumetrai</option>
+                  <option value="Priekabų dalys">Priekabų dalys</option>
+                  <option value="Sodo-miško technikos priedai">Sodo-miško technikos priedai</option>
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label for="inq-message">Reikiamos dalys, matmenys arba klausimas *</label>
+                <textarea id="inq-message" name="message" class="form-control" placeholder="Nurodykite dominantį komponentą, ilgį, sriegį, darbinį slėgį ar kiekį..." required></textarea>
+              </div>
+
+              <button type="submit" class="btn-primary" style="width: 100%; padding: 12px 18px; font-size: 0.95rem;">
+                Siųsti užklausą
+              </button>
+
+              <div class="form-status" id="form-status" role="status" aria-live="polite"></div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ========================
+       FOOTER
+       ======================== -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <div class="footer-logo-wrap">
+            <img src="assets/logo.png" alt="UAB Scan Technika" />
+          </div>
+          <p style="font-size: 0.86rem; color: rgba(255,255,255,0.74); max-width: 340px;">
+            Danijos–Lietuvos kapitalo įmonė, nuo 2000 m. tiekianti itališkas hidraulines ir mechanines perdavimo sistemas visoje Lietuvoje.
+          </p>
+        </div>
+
+        <div class="footer-col">
+          <h4>Greitos nuorodos</h4>
+          <ul class="footer-links">
+            <li><a href="#produktai">Produktų katalogas (8 grupės)</a></li>
+            <li><a href="#apie-mus">Apie UAB „Scan Technika“</a></li>
+            <li><a href="#kainos">Kainos ir užklausa</a></li>
+            <li><a href="#partneriai">Partneriai</a></li>
+            <li><a href="https://www.elturgus.lt/" target="_blank" rel="noopener noreferrer">El. parduotuvė elturgus.lt ↗</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Kontaktai</h4>
+          <ul class="footer-links">
+            <li><a href="tel:+37067640057">Tel.: +370 676 40057</a></li>
+            <li><a href="mailto:info@scantechnika.lt">El. p.: info@scantechnika.lt</a></li>
+            <li><a href="mailto:mindaugas@scantechnika.lt">El. p.: mindaugas@scantechnika.lt</a></li>
+            <li>Sodų g. 36 / Lauko 16, Žiežmariai, LT-56232 Kaišiadorių r.</li>
+            <li><a href="https://www.facebook.com/mindaugas.simkunas" target="_blank" rel="noopener noreferrer">Facebook: Mindaugas Šimkūnas ↗</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <span>© 2026 UAB „Scan Technika“</span>
+        <span>Hidraulinės ir mechaninės perdavimo sistemos</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ========================
+       INTERACTIVE QUICK-VIEW MODAL
+       ======================== -->
+  <div class="modal-overlay" id="quickview-modal" role="dialog" aria-modal="true" aria-labelledby="qv-title" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-header">
+        <div>
+          <span class="cat-tag" id="qv-tag" style="position: static; display: inline-block; margin-bottom: 6px;">Kategorija</span>
+          <h2 id="qv-title" style="font-size: 1.32rem; line-height: 1.25;">Kategorijos pavadinimas</h2>
+        </div>
+        <button type="button" class="modal-close" id="qv-close" aria-label="Uždaryti peržiūrą">×</button>
+      </div>
+      <div class="modal-body">
+        <div class="modal-top-split">
+          <div class="modal-img-box">
+            <img id="qv-img" src="assets/cat-kardanai.jpg" alt="" />
+          </div>
+          <div>
+            <p class="modal-desc" id="qv-desc"></p>
+            <div class="modal-specs-pills" id="qv-specs"></div>
+          </div>
+        </div>
+
+        <div class="modal-products-title">Pagrindinės pozicijos šioje kategorijoje</div>
+        <div class="modal-products-list" id="qv-products"></div>
+
+        <div class="modal-footer">
+          <span style="font-size: 0.82rem; color: var(--ink-muted);">Reikia pagalbos parenkant? Skambinkite <a href="tel:+37067640057" style="color: var(--green-deep); font-weight: 700;">+370 676 40057</a></span>
+          <div class="modal-footer-actions">
+            <a href="https://www.elturgus.lt/" target="_blank" rel="noopener noreferrer" class="btn-outline" id="qv-eshop-link">Pirkti elturgus.lt ↗</a>
+            <button type="button" class="btn-primary" id="qv-ask-btn">Klausti kainos</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    (function () {
+      'use strict';
+
+      /* ========================
+         8 REAL PRODUCT CATEGORIES DATA
+         ======================== */
+      const CATEGORIES = [
+        {
+          id: 'kardanai',
+          title: 'Kardaniniai velenai ir jų dalys',
+          group: 'kardanai',
+          badge: 'Kardanai · Pagrindinė',
+          badgeGold: true,
+          image: 'assets/cat-kardanai.jpg',
+          chips: ['Kryžmės', 'Šakutės', 'Apsauginės movos', 'Vamzdžiai'],
+          keywords: 'kardanas kardanai kardaniniai velenai kryzmes sakutes movos trikampiai vamzdziai apsauga pto itališki',
+          description: 'Itališki kardaniniai velenai žemės ūkio ir miško technikai (1–8 serijos), plataus kampo (CV) velenai bei visos atsarginės dalys remontui ir komplektavimui.',
+          specs: ['1–8 serijos', 'Itališka gamyba', 'Sandėlyje Žiežmariuose'],
+          items: [
+            { name: 'Komplektiniai kardaniniai velenai', detail: 'Standartiniai ir plataus kampo, įvairių ilgių' },
+            { name: 'Kardanų kryžmės', detail: 'Su tepimo taškais, visi standartiniai dydžiai' },
+            { name: 'Šakutės ir adapteriai', detail: '6 ir 21 šlicų, flanšinės, su fiksatoriumi' },
+            { name: 'Apsauginės movos ir gaubtai', detail: 'Frikcinės, nukerpamo varžto, terkšlinės movos' }
+          ]
+        },
+        {
+          id: 'zarnos',
+          title: 'Aukšto slėgio žarnos ir komponentai',
+          group: 'zarnos',
+          badge: 'Žarnos ir jungtys',
+          badgeGold: false,
+          image: 'assets/cat-zarnos.png',
+          chips: ['2SN / 4SP', 'Antgaliai', 'Greitos jungtys', 'Presavimas'],
+          keywords: 'zarnos auksto slegio zarna 1sn 2sn 4sp 4sh antgaliai movos jungtys presavimas adapteriai hidraulines',
+          description: 'Gaminame ir presuojame aukšto slėgio hidraulines žarnas pagal jūsų pateiktus matmenis ar pavyzdį. Platus jungčių, antgalių ir apsauginių spiralių pasirinkimas.',
+          specs: ['1SN / 2SN / 4SP / 4SH', 'Presavimas vietoje', 'BSP / JIC / DKOL'],
+          items: [
+            { name: 'Hidraulinės žarnos 1SN / 2SN', detail: 'Standartinės 1 ir 2 plieno pynių žarnos' },
+            { name: 'Ypatingai aukšto slėgio 4SP / 4SH', detail: '4 spiralių žarnos sunkiajai technikai' },
+            { name: 'Antgaliai ir presavimo movos', detail: 'Tiesūs, 45°, 90°, metriniai ir coliniai sriegiai' },
+            { name: 'Greito sujungimo movos', detail: 'ISO-A, Flat-Face, užsukamos jungtys ir adapteriai' }
+          ]
+        },
+        {
+          id: 'teleskopiniai',
+          title: 'Teleskopiniai hidrocilindrai',
+          group: 'hidraulika',
+          badge: 'Hidraulika',
+          badgeGold: true,
+          image: 'assets/cat-teleskopiniai.jpg',
+          chips: ['Savivarčiams', '3–6 pakopų', 'Priekaboms', 'Tvirtinimai'],
+          keywords: 'teleskopiniai hidrocilindrai cilindras cilindrai savivarciams priekaboms keltuvai hidraulika',
+          description: 'Patikimi itališki daugiapakopiai teleskopiniai hidrocilindrai savivarčių priekaboms, sunkvežimiams ir specialiajai technikai.',
+          specs: ['3–6 pakopos', 'Chromuotos pakopos', 'Darbinis slėgis iki 200 bar'],
+          items: [
+            { name: 'Po kėbulu montuojami cilindrai', detail: 'Su kardaniniais žiedais ir laikikliais' },
+            { name: 'Priekinio montavimo cilindrai', detail: 'Didelės keliamosios galios puspriekabėms' },
+            { name: 'Tvirtinimo lopšiai ir atramos', detail: 'Sferiniai laikikliai, kaiščiai, plokštelės' },
+            { name: 'Sandariklių komplektai', detail: 'Remontiniai riebokšliai teleskopiniams cilindrams' }
+          ]
+        },
+        {
+          id: 'siurbliai',
+          title: 'Siurbliai ir hidrovarikliai',
+          group: 'hidraulika',
+          badge: 'Hidraulika',
+          badgeGold: false,
+          image: 'assets/cat-siurbliai.jpg',
+          chips: ['Krumpliaratiniai', 'Orbitiniai', 'Hidrostotys', 'Vožtuvai'],
+          keywords: 'siurbliai siurblys hidrovarikliai variklis krumpliaratiniai gr1 gr2 gr3 orbitiniai hidraulines stotys voztuvai skirstytuvai',
+          description: 'Aliumininiai ir ketiniai krumpliaratiniai siurbliai, orbitiniai hidrovarikliai, hidraulinės stotys (12V / 24V / 380V) ir valdymo vožtuvai.',
+          specs: ['GR1 / GR2 / GR3', 'Hidraulinės stotys', 'Itališki gamintojai'],
+          items: [
+            { name: 'Krumpliaratiniai siurbliai', detail: 'Dešininio / kairinio sukimosi, 1–3 grupės' },
+            { name: 'Orbitiniai hidrovarikliai', detail: 'OMP, OMR, OMS, OMT serijos lėtaeigiams mazgams' },
+            { name: 'Hidraulinės stotys', detail: 'Kompaktiškos 12V/24V ir pramoninės 400V sistemos' },
+            { name: 'Skirstytuvai ir vožtuvai', detail: 'Monoblokiniai skirstytuvai, apsauginiai ir droseliniai vožtuvai' }
+          ]
+        },
+        {
+          id: 'cilindru-dalys',
+          title: 'Cilindrų dalys',
+          group: 'hidraulika',
+          badge: 'Hidraulika',
+          badgeGold: false,
+          image: 'assets/cat-cilindru-dalys.jpg',
+          chips: ['Chromuoti strypai', 'Vamzdžiai', 'Stūmokliai', 'Ausys'],
+          keywords: 'cilindru dalys cilindras hidrocilindrai strypai chromuoti vamzdziai honuoti stumokliai galvutes ausys sarnyrai',
+          description: 'Visi komponentai hidrocilindrų gamybai ir kapitaliniam remontui: honuoti vamzdžiai, chromuoti strypai, stūmokliai, galvutės ir šarnyrinės ausys.',
+          specs: ['Honuoti vamzdžiai H8', 'Chromuoti strypai f7', 'Pjovimas pagal ilgį'],
+          items: [
+            { name: 'Chromuoti strypai', detail: 'C45 ir indukciškai grūdinti, diametrai 16–100 mm' },
+            { name: 'Honuoti cilindrų vamzdžiai', detail: 'Tikslus vidinis apdirbimas H8 tolerancija' },
+            { name: 'Stūmokliai ir priekinės galvutės', detail: 'Paruošti su grioveliais sandarikliams' },
+            { name: 'Tvirtinimo ausys ir šarnyrai', detail: 'Privirintinos ausys, šakutės, sferiniai guoliai' }
+          ]
+        },
+        {
+          id: 'manometrai',
+          title: 'Manometrai, vakumetrai',
+          group: 'zarnos',
+          badge: 'Matavimas',
+          badgeGold: false,
+          image: 'assets/cat-manometrai.jpg',
+          chips: ['Gliceriniai', '0–400 bar', 'Matavimo taškai', 'Žarnelės'],
+          keywords: 'manometrai manometras vakumetrai vakumetras slegis glicerininiai bar matavimo taskai diagnostika',
+          description: 'Vibracijoms atsparūs glicerinu užpildyti manometrai, vakumetrai ir diagnostiniai matavimo komplektai hidraulinių sistemų slėgio kontrolei.',
+          specs: ['Ø63 mm ir Ø100 mm', 'Glicerinu užpildyti', 'Apatinis / galinis pajungimas'],
+          items: [
+            { name: 'Glicerininiai manometrai', detail: 'Diapazonai nuo 0–10 bar iki 0–600 bar' },
+            { name: 'Vakumetrai ir manovakumetrai', detail: 'Siurbimo linijų ir vakuumo sistemų kontrolei' },
+            { name: 'Testavimo taškai (Minimess)', detail: 'Greitam slėgio patikrinimui neišleidžiant alyvos' },
+            { name: 'Diagnostinės mikro žarnelės', detail: 'Lanksčios matavimo žarnelės su adapteriais' }
+          ]
+        },
+        {
+          id: 'priekabu-dalys',
+          title: 'Priekabų dalys',
+          group: 'ukiui',
+          badge: 'Priekaboms ir ūkiui',
+          badgeGold: false,
+          image: 'assets/cat-priekabu-dalys.jpg',
+          chips: ['Ašys ir stebulės', 'Atraminės kojos', 'Kilpos', 'Vyriai'],
+          keywords: 'priekabu dalys priekaba asys stebules atramines kojos kilpos sukabinimo vyriai bortu uzraktai stabdziai',
+          description: 'Tvirtos žemės ūkio ir pramoninių priekabų dalys: ašys, stebulės, atraminės kojos, sukabinimo kilpos, bortų užraktai ir vyriai.',
+          specs: ['Ūkio priekaboms', 'Didelės apkrovos', 'Atsparūs mazgai'],
+          items: [
+            { name: 'Atraminės kojos ir domkratai', detail: 'Mechaninės ir hidraulinės, skirtingų apkrovų' },
+            { name: 'Sukabinimo kilpos ir grąžulai', detail: 'Privirintinos ir prisukamos Ø40 / Ø50 mm' },
+            { name: 'Bortų užraktai ir vyriai', detail: 'Centrinio atidarymo mechanizmai, skląsčiai' },
+            { name: 'Ašys, stebulės ir ratų tvirtinimas', detail: 'Pusašiai, guoliai, ratų smeigės ir veržlės' }
+          ]
+        },
+        {
+          id: 'sodo-misko',
+          title: 'Sodo-miško technikos priedai',
+          group: 'ukiui',
+          badge: 'Sodui ir miškui',
+          badgeGold: false,
+          image: 'assets/cat-sodo-misko.jpg',
+          chips: ['Pjūklų dalys', 'Trimeriai', 'Galvutės ir diskai', 'Apsauga'],
+          keywords: 'sodo misko technikos priedai pjuklai trimeriai galvutes diskai zolei grandines apsaugos skydeliai ama',
+          description: 'Itališki sodo ir miško technikos priedai: žoliapjovių ir trimerių galvutės, pjovimo diskai, grandininių pjūklų komponentai bei darbo apsaugos priemonės.',
+          specs: ['AMA kokybė', 'Miškui ir sodui', 'Greitas pristatymas'],
+          items: [
+            { name: 'Trimerių galvutės ir valas', detail: 'Automatinės ir pusiau automatinės galvutės' },
+            { name: 'Plieniniai pjovimo diskai', detail: 'Trišakių ir dantytų diskų pasirinkimas žolei ir krūmams' },
+            { name: 'Pjūklų juostos ir grandinės', detail: 'Atsarginės dalys benzininiams ir elektriniams pjūklams' },
+            { name: 'Darbo apsaugos priemonės', detail: 'Tinkliniai skydeliai, ausinės, pirštinės' }
+          ]
+        }
+      ];
+
+      /* ========================
+         STATE & DOM REFERENCES
+         ======================== */
+      let activeFilter = 'all';
+      let searchQuery = '';
+      let activeModalCategory = null;
+
+      const gridEl = document.getElementById('catalog-grid');
+      const searchInput = document.getElementById('catalog-search');
+      const searchClear = document.getElementById('search-clear');
+      const dropdownEl = document.getElementById('search-dropdown');
+      const filterPillsWrap = document.getElementById('filter-pills');
+      const pillButtons = Array.from(filterPillsWrap.querySelectorAll('.filter-pill'));
+      const pillIndicator = document.getElementById('pill-indicator');
+      const matchCountNum = document.getElementById('match-count-num');
+      const emptyState = document.getElementById('empty-state');
+      const resetBtn = document.getElementById('reset-filters-btn');
+
+      // Modal elements
+      const modalOverlay = document.getElementById('quickview-modal');
+      const qvClose = document.getElementById('qv-close');
+      const qvTag = document.getElementById('qv-tag');
+      const qvTitle = document.getElementById('qv-title');
+      const qvImg = document.getElementById('qv-img');
+      const qvDesc = document.getElementById('qv-desc');
+      const qvSpecs = document.getElementById('qv-specs');
+      const qvProducts = document.getElementById('qv-products');
+      const qvAskBtn = document.getElementById('qv-ask-btn');
+
+      // Form elements
+      const inquiryCard = document.getElementById('uzklausos-kortele');
+      const inquiryForm = document.getElementById('inquiry-form');
+      const inqCategory = document.getElementById('inq-category');
+      const inqMessage = document.getElementById('inq-message');
+      const formStatus = document.getElementById('form-status');
+
+      /* ========================
+         UTILITIES
+         ======================== */
+      function normalizeText(str) {
+        return (str || '')
+          .toLowerCase()
+          .normalize('NFD')
+          .replace(/[\u0300-\u036f]/g, '');
+      }
+
+      function escapeHtml(str) {
+        return str.replace(/[&<>"']/g, function (c) {
+          return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c];
+        });
+      }
+
+      function highlightMatch(text, rawQuery) {
+        const clean = rawQuery.trim();
+        if (!clean) return escapeHtml(text);
+        const normText = normalizeText(text);
+        const normQuery = normalizeText(clean);
+        const idx = normText.indexOf(normQuery);
+        if (idx === -1) return escapeHtml(text);
+        const before = escapeHtml(text.slice(0, idx));
+        const match = escapeHtml(text.slice(idx, idx + clean.length));
+        const after = escapeHtml(text.slice(idx + clean.length));
+        return before + '<mark class="hl">' + match + '</mark>' + after;
+      }
+
+      function matchesCategory(cat, query, filter) {
+        if (filter !== 'all' && cat.group !== filter) return false;
+        const q = normalizeText(query.trim());
+        if (!q) return true;
+        const haystack = normalizeText(
+          cat.title + ' ' +
+          cat.chips.join(' ') + ' ' +
+          cat.keywords + ' ' +
+          cat.description + ' ' +
+          cat.items.map(function (i) { return i.name + ' ' + i.detail; }).join(' ')
+        );
+        return q.split(/\s+/).every(function (token) {
+          return haystack.indexOf(token) !== -1;
+        });
+      }
+
+      /* ========================
+         RENDER 8 CATEGORY CARDS
+         ======================== */
+      function renderCatalog() {
+        const filtered = CATEGORIES.filter(function (cat) {
+          return matchesCategory(cat, searchQuery, activeFilter);
+        });
+
+        gridEl.innerHTML = filtered.map(function (cat) {
+          const chipsHtml = cat.chips.map(function (chip) {
+            return '<span class="cat-chip">' + highlightMatch(chip, searchQuery) + '</span>';
+          }).join('');
+
+          return (
+            '<article class="cat-card" tabindex="0" role="button" data-cat-id="' + cat.id + '" aria-label="Greita peržiūra: ' + escapeHtml(cat.title) + '">' +
+              '<div class="cat-card-media">' +
+                '<span class="cat-tag' + (cat.badgeGold ? ' tag-gold' : '') + '">' + escapeHtml(cat.badge) + '</span>' +
+                '<img src="' + cat.image + '" alt="' + escapeHtml(cat.title) + '" />' +
+              '</div>' +
+              '<div class="cat-card-body">' +
+                '<h2 class="cat-card-title">' + highlightMatch(cat.title, searchQuery) + '</h2>' +
+                '<div class="cat-chips">' + chipsHtml + '</div>' +
+                '<div class="cat-card-footer">' +
+                  '<span class="cat-quick-link">Greita peržiūra <span aria-hidden="true">→</span></span>' +
+                  '<span class="cat-count-hint">' + cat.items.length + ' poz.</span>' +
+                '</div>' +
+              '</div>' +
+            '</article>'
+          );
+        }).join('');
+
+        matchCountNum.textContent = String(filtered.length);
+        emptyState.classList.toggle('visible', filtered.length === 0);
+
+        // Attach cursor-tracking spotlight & click handlers to each rendered card
+        const cards = gridEl.querySelectorAll('.cat-card');
+        cards.forEach(function (card) {
+          card.addEventListener('mousemove', function (e) {
+            const rect = card.getBoundingClientRect();
+            card.style.setProperty('--mx', (e.clientX - rect.left) + 'px');
+            card.style.setProperty('--my', (e.clientY - rect.top) + 'px');
+          });
+          card.addEventListener('click', function () {
+            openQuickView(card.getAttribute('data-cat-id'));
+          });
+          card.addEventListener('keydown', function (e) {
+            if (e.key === 'Enter' || e.key === ' ') {
+              e.preventDefault();
+              openQuickView(card.getAttribute('data-cat-id'));
+            }
+          });
+        });
+      }
+
+      /* ========================
+         LIVE AUTOCOMPLETE DROPDOWN
+         ======================== */
+      function renderDropdown() {
+        const q = searchQuery.trim();
+        searchClear.classList.toggle('visible', q.length > 0);
+        if (!q) {
+          dropdownEl.classList.remove('open');
+          dropdownEl.innerHTML = '';
+          return;
+        }
+
+        const matches = CATEGORIES.filter(function (cat) {
+          return matchesCategory(cat, q, 'all');
+        });
+
+        if (matches.length === 0) {
+          dropdownEl.innerHTML = '<div style="padding: 10px 12px; font-size: 0.84rem; color: var(--ink-muted);">Nieko nerasta pagal „' + escapeHtml(q) + '“. Pabandykite kitą žodį.</div>';
+          dropdownEl.classList.add('open');
+          return;
+        }
+
+        dropdownEl.innerHTML = matches.map(function (cat) {
+          return (
+            '<button type="button" class="dropdown-item" role="option" data-cat-id="' + cat.id + '">' +
+              '<img class="dropdown-thumb" src="' + cat.image + '" alt="" />' +
+              '<div class="dropdown-info">' +
+                '<div class="dropdown-title">' + highlightMatch(cat.title, q) + '</div>' +
+                '<div class="dropdown-sub">' + cat.chips.join(' · ') + '</div>' +
+              '</div>' +
+              '<span class="dropdown-action">Atidaryti →</span>' +
+            '</button>'
+          );
+        }).join('');
+
+        dropdownEl.classList.add('open');
+
+        dropdownEl.querySelectorAll('.dropdown-item').forEach(function (item) {
+          item.addEventListener('click', function () {
+            dropdownEl.classList.remove('open');
+            openQuickView(item.getAttribute('data-cat-id'));
+          });
+        });
+      }
+
+      /* ========================
+         ANIMATED PILL INDICATOR
+         ======================== */
+      function updatePillIndicator() {
+        const activeBtn = filterPillsWrap.querySelector('.filter-pill.active');
+        if (!activeBtn || window.innerWidth <= 480) return;
+        const wrapRect = filterPillsWrap.getBoundingClientRect();
+        const btnRect = activeBtn.getBoundingClientRect();
+        pillIndicator.style.width = btnRect.width + 'px';
+        pillIndicator.style.transform = 'translateX(' + (btnRect.left - wrapRect.left - 4) + 'px)';
+      }
+
+      pillButtons.forEach(function (btn) {
+        btn.addEventListener('click', function () {
+          activeFilter = btn.getAttribute('data-filter');
+          pillButtons.forEach(function (b) {
+            const isAct = b === btn;
+            b.classList.toggle('active', isAct);
+            b.setAttribute('aria-selected', String(isAct));
+          });
+          updatePillIndicator();
+          renderCatalog();
+        });
+      });
+
+      window.addEventListener('resize', updatePillIndicator);
+
+      /* ========================
+         SEARCH & QUICK HINTS
+         ======================== */
+      searchInput.addEventListener('input', function () {
+        searchQuery = searchInput.value;
+        // When user types a search, switch filter to 'all' if current filter hides all matches
+        if (searchQuery.trim() && activeFilter !== 'all') {
+          const hasInCurrent = CATEGORIES.some(function (c) { return matchesCategory(c, searchQuery, activeFilter); });
+          if (!hasInCurrent) {
+            activeFilter = 'all';
+            pillButtons.forEach(function (b) {
+              const isAll = b.getAttribute('data-filter') === 'all';
+              b.classList.toggle('active', isAll);
+              b.setAttribute('aria-selected', String(isAll));
+            });
+            updatePillIndicator();
+          }
+        }
+        renderCatalog();
+        renderDropdown();
+      });
+
+      searchInput.addEventListener('focus', function () {
+        if (searchQuery.trim()) renderDropdown();
+      });
+
+      document.addEventListener('click', function (e) {
+        if (!e.target.closest('.search-box-wrap')) {
+          dropdownEl.classList.remove('open');
+        }
+      });
+
+      searchClear.addEventListener('click', function () {
+        searchQuery = '';
+        searchInput.value = '';
+        searchInput.focus();
+        renderCatalog();
+        renderDropdown();
+      });
+
+      document.querySelectorAll('.hint-chip').forEach(function (chip) {
+        chip.addEventListener('click', function () {
+          const q = chip.getAttribute('data-query');
+          searchQuery = q;
+          searchInput.value = q;
+          activeFilter = 'all';
+          pillButtons.forEach(function (b) {
+            const isAll = b.getAttribute('data-filter') === 'all';
+            b.classList.toggle('active', isAll);
+            b.setAttribute('aria-selected', String(isAll));
+          });
+          updatePillIndicator();
+          renderCatalog();
+          renderDropdown();
+        });
+      });
+
+      resetBtn.addEventListener('click', function () {
+        searchQuery = '';
+        searchInput.value = '';
+        activeFilter = 'all';
+        pillButtons.forEach(function (b) {
+          const isAll = b.getAttribute('data-filter') === 'all';
+          b.classList.toggle('active', isAll);
+          b.setAttribute('aria-selected', String(isAll));
+        });
+        updatePillIndicator();
+        renderCatalog();
+        renderDropdown();
+      });
+
+      /* ========================
+         QUICK-VIEW MODAL LOGIC
+         ======================== */
+      function openQuickView(catId) {
+        const cat = CATEGORIES.find(function (c) { return c.id === catId; });
+        if (!cat) return;
+        activeModalCategory = cat;
+
+        qvTag.textContent = cat.badge;
+        qvTag.className = 'cat-tag' + (cat.badgeGold ? ' tag-gold' : '');
+        qvTitle.textContent = cat.title;
+        qvImg.src = cat.image;
+        qvImg.alt = cat.title;
+        qvDesc.textContent = cat.description;
+
+        qvSpecs.innerHTML = cat.specs.map(function (s) {
+          return '<span class="modal-spec-pill">' + escapeHtml(s) + '</span>';
+        }).join('');
+
+        qvProducts.innerHTML = cat.items.map(function (item) {
+          return (
+            '<div class="modal-product-item">' +
+              '<strong>' + escapeHtml(item.name) + '</strong>' +
+              '<span>' + escapeHtml(item.detail) + '</span>' +
+            '</div>'
+          );
+        }).join('');
+
+        modalOverlay.classList.add('open');
+        modalOverlay.setAttribute('aria-hidden', 'false');
+        document.body.style.overflow = 'hidden';
+        qvClose.focus();
+      }
+
+      function closeQuickView() {
+        modalOverlay.classList.remove('open');
+        modalOverlay.setAttribute('aria-hidden', 'true');
+        document.body.style.overflow = '';
+      }
+
+      qvClose.addEventListener('click', closeQuickView);
+      modalOverlay.addEventListener('click', function (e) {
+        if (e.target === modalOverlay) closeQuickView();
+      });
+
+      document.addEventListener('keydown', function (e) {
+        if (e.key === 'Escape' && modalOverlay.classList.contains('open')) {
+          closeQuickView();
+        }
+      });
+
+      function prefillInquiry(categoryTitle, itemText) {
+        if (inqCategory) {
+          inqCategory.value = categoryTitle || '';
+        }
+        if (inqMessage) {
+          inqMessage.value = 'Domina kaina ir terminas: ' + (itemText || categoryTitle) + '. ';
+        }
+        inquiryCard.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        inquiryCard.classList.add('flash-highlight');
+        setTimeout(function () {
+          inquiryCard.classList.remove('flash-highlight');
+        }, 1600);
+        setTimeout(function () {
+          document.getElementById('inq-name').focus();
+        }, 450);
+      }
+
+      qvAskBtn.addEventListener('click', function () {
+        if (!activeModalCategory) return;
+        const catTitle = activeModalCategory.title;
+        closeQuickView();
+        prefillInquiry(catTitle, catTitle);
+      });
+
+      document.querySelectorAll('.price-ask-btn').forEach(function (btn) {
+        btn.addEventListener('click', function () {
+          prefillInquiry(
+            btn.getAttribute('data-prefill-cat'),
+            btn.getAttribute('data-prefill-item')
+          );
+        });
+      });
+
+      /* ========================
+         INQUIRY FORM SUBMISSION
+         ======================== */
+      inquiryForm.addEventListener('submit', function (e) {
+        e.preventDefault();
+        const name = document.getElementById('inq-name').value.trim();
+        const contact = document.getElementById('inq-contact').value.trim();
+        const msg = inqMessage.value.trim();
+
+        if (!name || !contact || !msg) {
+          formStatus.textContent = 'Prašome užpildyti privalomus laukus (vardą, kontaktus ir užklausos tekstą).';
+          formStatus.style.background = '#FFF8DC';
+          formStatus.style.borderColor = '#E5A400';
+          formStatus.style.color = '#6B4B00';
+          formStatus.classList.add('visible');
+          return;
+        }
+
+        formStatus.textContent = 'Ačiū, ' + name + '! Jūsų užklausa paruošta. Susisieksime su jumis nurodytais kontaktais (' + contact + ') artimiausiu metu.';
+        formStatus.style.background = 'var(--green-soft)';
+        formStatus.style.borderColor = 'var(--green-brand)';
+        formStatus.style.color = 'var(--green-deep)';
+        formStatus.classList.add('visible');
+        inquiryForm.reset();
+      });
+
+      /* ========================
+         MOBILE MENU & STICKY HEADER
+         ======================== */
+      const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+      const mobileDrawer = document.getElementById('mobile-drawer');
+      const siteHeader = document.getElementById('site-header');
+
+      function toggleMobileMenu(forceState) {
+        const isOpen = typeof forceState === 'boolean' ? forceState : !mobileDrawer.classList.contains('open');
+        mobileDrawer.classList.toggle('open', isOpen);
+        mobileDrawer.setAttribute('aria-hidden', String(!isOpen));
+        mobileMenuBtn.setAttribute('aria-expanded', String(isOpen));
+      }
+
+      mobileMenuBtn.addEventListener('click', function () {
+        toggleMobileMenu();
+      });
+
+      mobileDrawer.addEventListener('click', function (e) {
+        if (e.target === mobileDrawer || e.target.closest('.mobile-nav-link')) {
+          toggleMobileMenu(false);
+        }
+      });
+
+      window.addEventListener('scroll', function () {
+        siteHeader.classList.toggle('scrolled', window.scrollY > 12);
+      }, { passive: true });
+
+      /* ========================
+         SUBTLE SCROLL REVEAL (BELOW THE FOLD ONLY)
+         ======================== */
+      if ('IntersectionObserver' in window && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+        document.documentElement.classList.add('reveal-ready');
+        const io = new IntersectionObserver(function (entries) {
+          entries.forEach(function (entry) {
+            if (entry.isIntersecting) {
+              entry.target.classList.add('is-visible');
+              io.unobserve(entry.target);
+            }
+          });
+        }, { threshold: 0.08, rootMargin: '0px 0px -20px 0px' });
+
+        document.querySelectorAll('.reveal').forEach(function (el) {
+          io.observe(el);
+        });
+      }
+
+      /* ========================
+         INITIALIZE IMMEDIATELY
+         ======================== */
+      renderCatalog();
+      requestAnimationFrame(updatePillIndicator);
+    })();
+  </script>
+</body>
+</html>
