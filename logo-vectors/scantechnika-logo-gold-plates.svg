@@ -6,6 +6,13 @@
       <stop offset="65%" stop-color="#C99E42"/>
       <stop offset="100%" stop-color="#9A7225"/>
     </linearGradient>
+    <linearGradient id="goldRibbon" x1="15%" y1="0%" x2="85%" y2="100%">
+      <stop offset="0%" stop-color="#FFF2BE"/>
+      <stop offset="28%" stop-color="#E6C36B"/>
+      <stop offset="52%" stop-color="#FBF0C4"/>
+      <stop offset="76%" stop-color="#C69638"/>
+      <stop offset="100%" stop-color="#8F651D"/>
+    </linearGradient>
     <linearGradient id="goldBorder" x1="0%" y1="0%" x2="0%" y2="100%">
       <stop offset="0%" stop-color="#FFF2C2"/>
       <stop offset="50%" stop-color="#C89B3C"/>
@@ -14,12 +21,12 @@
     <linearGradient id="forestGreen" x1="0%" y1="0%" x2="100%" y2="100%">
       <stop offset="0%" stop-color="#1E6040"/>
       <stop offset="50%" stop-color="#14452F"/>
-      <stop offset="100%" stop-color="#0D2F20"/>
+      <stop offset="100%" stop-color="#0B291B"/>
     </linearGradient>
-    <linearGradient id="steelBevel" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#F8E7B0"/>
-      <stop offset="50%" stop-color="#C49A3A"/>
-      <stop offset="100%" stop-color="#7B5917"/>
+    <linearGradient id="steelRing" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#D8CFC0"/>
+      <stop offset="50%" stop-color="#9A8E7A"/>
+      <stop offset="100%" stop-color="#6B5F4C"/>
     </linearGradient>
     <radialGradient id="orbBronze" cx="38%" cy="32%" r="65%">
       <stop offset="0%" stop-color="#FFF4D2"/>
@@ -82,24 +89,33 @@
     <text x="345" y="99" fill="#13422C">Technika</text>
   </g>
 
-  <!-- Geometric faceted S emblem + glowing cyan starburst -->
+  <!-- Geometric faceted S emblem with golden inner ribbon + glowing cyan starburst -->
   <g transform="translate(14, 6)">
     <g filter="url(#softShadow)">
-      <circle cx="64" cy="74" r="46" fill="none" stroke="url(#steelBevel)" stroke-width="2.5" opacity="0.75"/>
+      <!-- Background subtle metallic ring -->
+      <circle cx="64" cy="74" r="46" fill="none" stroke="url(#steelRing)" stroke-width="3" opacity="0.8"/>
+
+      <!-- Outer dark-green S base frame -->
       <path d="M68 8 L118 40 L94 56 L66 38 L44 52 L106 90 L106 106 L58 140 L10 108 L34 92 L62 110 L84 96 L22 58 L22 42 Z"
-            fill="url(#forestGreen)" stroke="url(#steelBevel)" stroke-width="4" stroke-linejoin="miter"/>
-      <path d="M68 15 L108 40 L94 49 L66 31 L34 52 L98 92 L98 102 L58 131 L18 106 L34 96 L62 114 L92 95 L28 55 L28 45 Z"
-            fill="none" stroke="#F6E09B" stroke-width="1.6" opacity="0.85"/>
+            fill="url(#forestGreen)" stroke="#0B281B" stroke-width="3" stroke-linejoin="miter"/>
+
+      <!-- Bold brushed-gold inner S ribbon (center bar + upper-left & lower-right bevels) -->
+      <path d="M68 15 L81 23 L35 51 L100 92 L100 104 L58 133 L45 125 L91 97 L28 57 L28 45 Z"
+            fill="url(#goldRibbon)" stroke="#0E3322" stroke-width="1.4" stroke-linejoin="miter"/>
+
+      <!-- Top-right & bottom-left forest green beveled facets with gold inner highlight -->
+      <polygon points="81,23 111,41 94,52 67,35" fill="url(#forestGreen)" stroke="#E8C76F" stroke-width="1.2"/>
+      <polygon points="45,125 17,107 34,96 61,113" fill="url(#forestGreen)" stroke="#E8C76F" stroke-width="1.2"/>
+
+      <!-- Crisp bright gold specular ridge down the center of the golden ribbon -->
+      <path d="M68 19 L33 48 L33 54 L94 93 L94 101 L58 128" fill="none" stroke="#FFF7D6" stroke-width="1.5" stroke-opacity="0.75"/>
     </g>
 
     <!-- Luminous cyan-white 6-ray starburst flare -->
     <g filter="url(#cyanGlow)">
-      <circle cx="64" cy="74" r="30" fill="url(#cyanHalo)"/>
-      <!-- Primary diagonal slash ray (bottom-left to top-right) -->
+      <circle cx="64" cy="74" r="29" fill="url(#cyanHalo)"/>
       <polygon points="60,70 132,-2 68,78 -4,150" fill="url(#rayDiag)"/>
-      <!-- Vertical needle ray -->
       <polygon points="64,6 67,74 64,142 61,74" fill="url(#rayVert)"/>
-      <!-- Horizontal needle ray -->
       <polygon points="4,74 64,71 124,74 64,77" fill="url(#rayHoriz)"/>
     </g>
 
