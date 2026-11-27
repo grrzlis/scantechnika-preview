@@ -1,0 +1,59 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 160" width="640" height="160" role="img" aria-label="Scan Technika logotipas">
+  <defs>
+    <linearGradient id="goldPlate" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#E7C97B"/>
+      <stop offset="35%" stop-color="#F7E3A3"/>
+      <stop offset="65%" stop-color="#C99E42"/>
+      <stop offset="100%" stop-color="#9A7225"/>
+    </linearGradient>
+    <linearGradient id="goldBorder" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#FFF2C2"/>
+      <stop offset="50%" stop-color="#C89B3C"/>
+      <stop offset="100%" stop-color="#6B4C13"/>
+    </linearGradient>
+    <linearGradient id="forestGreen" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1E6040"/>
+      <stop offset="50%" stop-color="#14452F"/>
+      <stop offset="100%" stop-color="#0D2F20"/>
+    </linearGradient>
+    <linearGradient id="steelBevel" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#F8E7B0"/>
+      <stop offset="50%" stop-color="#C49A3A"/>
+      <stop offset="100%" stop-color="#7B5917"/>
+    </linearGradient>
+    <filter id="softShadow" x="-8%" y="-12%" width="118%" height="132%">
+      <feDropShadow dx="0" dy="4" stdDeviation="4" flood-color="#0C2418" flood-opacity="0.22"/>
+    </filter>
+  </defs>
+
+  <!-- Left brushed gold plate -->
+  <rect x="82" y="22" width="224" height="116" rx="14" fill="url(#goldPlate)" stroke="url(#goldBorder)" stroke-width="3" filter="url(#softShadow)"/>
+  <rect x="86" y="26" width="216" height="108" rx="11" fill="none" stroke="#FFF6D6" stroke-opacity="0.45" stroke-width="1.5"/>
+
+  <!-- Right brushed gold plate -->
+  <rect x="322" y="22" width="304" height="116" rx="14" fill="url(#goldPlate)" stroke="url(#goldBorder)" stroke-width="3" filter="url(#softShadow)"/>
+  <rect x="326" y="26" width="296" height="108" rx="11" fill="none" stroke="#FFF6D6" stroke-opacity="0.45" stroke-width="1.5"/>
+
+  <!-- Wordmark on gold plates -->
+  <g font-family="Georgia, 'Times New Roman', serif" font-weight="700" font-size="60" letter-spacing="-0.5">
+    <text x="150" y="99" fill="#FFF1B8" opacity="0.7" dx="1.5" dy="1.5">Scan</text>
+    <text x="150" y="99" fill="#13422C">Scan</text>
+    <text x="345" y="99" fill="#FFF1B8" opacity="0.7" dx="1.5" dy="1.5">Technika</text>
+    <text x="345" y="99" fill="#13422C">Technika</text>
+  </g>
+
+  <!-- Geometric faceted S emblem -->
+  <g transform="translate(14, 6)" filter="url(#softShadow)">
+    <!-- Subtle gear/ring accent -->
+    <circle cx="62" cy="74" r="46" fill="none" stroke="url(#steelBevel)" stroke-width="2.5" stroke-dasharray="18 6" opacity="0.75"/>
+    <!-- Outer dark green geometric S silhouette -->
+    <path d="M68 8 L118 40 L94 56 L66 38 L44 52 L106 90 L106 106 L58 140 L10 108 L34 92 L62 110 L84 96 L22 58 L22 42 Z"
+          fill="url(#forestGreen)" stroke="url(#steelBevel)" stroke-width="4" stroke-linejoin="miter"/>
+    <!-- Inner gold facet highlights -->
+    <path d="M68 15 L108 40 L94 49 L66 31 L34 52 L98 92 L98 102 L58 131 L18 106 L34 96 L62 114 L92 95 L28 55 L28 45 Z"
+          fill="none" stroke="#F6E09B" stroke-width="1.6" opacity="0.85"/>
+    <!-- Center precision bearing node -->
+    <circle cx="64" cy="74" r="13" fill="#14452F" stroke="url(#steelBevel)" stroke-width="3"/>
+    <circle cx="64" cy="74" r="5.5" fill="url(#goldPlate)"/>
+  </g>
+</svg>

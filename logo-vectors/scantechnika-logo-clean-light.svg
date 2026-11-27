@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 460 110" width="460" height="110" role="img" aria-label="Scan Technika logotipas">
+  <defs>
+    <linearGradient id="emblemGreen" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1E6544"/>
+      <stop offset="100%" stop-color="#123D29"/>
+    </linearGradient>
+    <linearGradient id="emblemGold" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#F2D06B"/>
+      <stop offset="55%" stop-color="#D4A024"/>
+      <stop offset="100%" stop-color="#A67614"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Geometric S emblem -->
+  <g transform="translate(8, 7) scale(0.66)">
+    <circle cx="64" cy="74" r="52" fill="#F4F7F4" stroke="url(#emblemGold)" stroke-width="3"/>
+    <path d="M68 12 L114 41 L92 55 L66 39 L45 52 L104 89 L104 104 L58 136 L14 107 L36 93 L62 109 L83 96 L24 59 L24 44 Z"
+          fill="url(#emblemGreen)" stroke="url(#emblemGold)" stroke-width="4" stroke-linejoin="miter"/>
+    <circle cx="64" cy="74" r="12" fill="#14452F" stroke="url(#emblemGold)" stroke-width="3"/>
+    <circle cx="64" cy="74" r="5" fill="#F2D06B"/>
+  </g>
+
+  <!-- Clean modern typography -->
+  <g transform="translate(108, 0)">
+    <text x="0" y="62" font-family="'Plus Jakarta Sans', 'Segoe UI', system-ui, sans-serif" font-weight="800" font-size="42" letter-spacing="-0.8">
+      <tspan fill="#14452F">Scan</tspan><tspan fill="#C89316">Technika</tspan>
+    </text>
+    <text x="2" y="86" font-family="'Inter', 'Segoe UI', system-ui, sans-serif" font-weight="600" font-size="13.5" letter-spacing="2.2" fill="#4A5D52">
+      HIDRAULIKA IR KARDANAI
+    </text>
+  </g>
+</svg>
