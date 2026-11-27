@@ -1,4 +1,4 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 460 110" width="460" height="110" role="img" aria-label="Scan Technika logotipas">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 460 116" width="460" height="116" role="img" aria-label="Scan Technika logotipas">
   <defs>
     <linearGradient id="emblemGreen" x1="0%" y1="0%" x2="100%" y2="100%">
       <stop offset="0%" stop-color="#1E6544"/>
@@ -9,19 +9,69 @@
       <stop offset="55%" stop-color="#D4A024"/>
       <stop offset="100%" stop-color="#A67614"/>
     </linearGradient>
+    <radialGradient id="orbBronze2" cx="38%" cy="32%" r="65%">
+      <stop offset="0%" stop-color="#FFF4D2"/>
+      <stop offset="40%" stop-color="#D4AE6A"/>
+      <stop offset="80%" stop-color="#6D5025"/>
+      <stop offset="100%" stop-color="#2E1F0C"/>
+    </radialGradient>
+    <radialGradient id="cyanHalo2" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#FFFFFF" stop-opacity="0.95"/>
+      <stop offset="35%" stop-color="#7CF3FF" stop-opacity="0.78"/>
+      <stop offset="70%" stop-color="#00D4FF" stop-opacity="0.28"/>
+      <stop offset="100%" stop-color="#00D4FF" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="rayDiag2" x1="0%" y1="100%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#00D4FF" stop-opacity="0"/>
+      <stop offset="28%" stop-color="#5CEBFF" stop-opacity="0.9"/>
+      <stop offset="50%" stop-color="#FFFFFF" stop-opacity="1"/>
+      <stop offset="72%" stop-color="#5CEBFF" stop-opacity="0.9"/>
+      <stop offset="100%" stop-color="#00D4FF" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="rayVert2" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#00D4FF" stop-opacity="0"/>
+      <stop offset="32%" stop-color="#6DF0FF" stop-opacity="0.88"/>
+      <stop offset="50%" stop-color="#FFFFFF" stop-opacity="1"/>
+      <stop offset="68%" stop-color="#6DF0FF" stop-opacity="0.88"/>
+      <stop offset="100%" stop-color="#00D4FF" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="rayHoriz2" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#00D4FF" stop-opacity="0"/>
+      <stop offset="32%" stop-color="#6DF0FF" stop-opacity="0.88"/>
+      <stop offset="50%" stop-color="#FFFFFF" stop-opacity="1"/>
+      <stop offset="68%" stop-color="#6DF0FF" stop-opacity="0.88"/>
+      <stop offset="100%" stop-color="#00D4FF" stop-opacity="0"/>
+    </linearGradient>
+    <filter id="cyanGlow2" x="-40%" y="-40%" width="180%" height="180%">
+      <feGaussianBlur stdDeviation="2.8" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
   </defs>
 
-  <!-- Geometric S emblem -->
-  <g transform="translate(8, 7) scale(0.66)">
-    <circle cx="64" cy="74" r="52" fill="#F4F7F4" stroke="url(#emblemGold)" stroke-width="3"/>
+  <!-- Geometric S emblem with glowing starburst -->
+  <g transform="translate(12, 9) scale(0.66)">
+    <circle cx="64" cy="74" r="50" fill="#F4F7F4" stroke="url(#emblemGold)" stroke-width="3"/>
     <path d="M68 12 L114 41 L92 55 L66 39 L45 52 L104 89 L104 104 L58 136 L14 107 L36 93 L62 109 L83 96 L24 59 L24 44 Z"
           fill="url(#emblemGreen)" stroke="url(#emblemGold)" stroke-width="4" stroke-linejoin="miter"/>
-    <circle cx="64" cy="74" r="12" fill="#14452F" stroke="url(#emblemGold)" stroke-width="3"/>
-    <circle cx="64" cy="74" r="5" fill="#F2D06B"/>
+
+    <!-- Cyan-white starburst flare -->
+    <g filter="url(#cyanGlow2)">
+      <circle cx="64" cy="74" r="30" fill="url(#cyanHalo2)"/>
+      <polygon points="60,70 130,0 68,78 -2,148" fill="url(#rayDiag2)"/>
+      <polygon points="64,6 67,74 64,142 61,74" fill="url(#rayVert2)"/>
+      <polygon points="4,74 64,71 124,74 64,77" fill="url(#rayHoriz2)"/>
+    </g>
+
+    <!-- Center bronze orb with cyan ring -->
+    <circle cx="64" cy="74" r="12.5" fill="#1B8F9C" stroke="#99F6FF" stroke-width="1.8"/>
+    <circle cx="64" cy="74" r="8" fill="url(#orbBronze2)" stroke="#0D3B42" stroke-width="1"/>
   </g>
 
   <!-- Clean modern typography -->
-  <g transform="translate(108, 0)">
+  <g transform="translate(114, 4)">
     <text x="0" y="62" font-family="'Plus Jakarta Sans', 'Segoe UI', system-ui, sans-serif" font-weight="800" font-size="42" letter-spacing="-0.8">
       <tspan fill="#14452F">Scan</tspan><tspan fill="#C89316">Technika</tspan>
     </text>

@@ -9,12 +9,63 @@
       <stop offset="50%" stop-color="#D7A329"/>
       <stop offset="100%" stop-color="#9B6E14"/>
     </linearGradient>
+    <radialGradient id="orbBronze3" cx="38%" cy="32%" r="65%">
+      <stop offset="0%" stop-color="#FFF4D2"/>
+      <stop offset="40%" stop-color="#D4AE6A"/>
+      <stop offset="80%" stop-color="#6D5025"/>
+      <stop offset="100%" stop-color="#2E1F0C"/>
+    </radialGradient>
+    <radialGradient id="cyanHalo3" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#FFFFFF" stop-opacity="0.95"/>
+      <stop offset="35%" stop-color="#7CF3FF" stop-opacity="0.8"/>
+      <stop offset="70%" stop-color="#00D4FF" stop-opacity="0.3"/>
+      <stop offset="100%" stop-color="#00D4FF" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="rayDiag3" x1="0%" y1="100%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#00D4FF" stop-opacity="0"/>
+      <stop offset="28%" stop-color="#5CEBFF" stop-opacity="0.9"/>
+      <stop offset="50%" stop-color="#FFFFFF" stop-opacity="1"/>
+      <stop offset="72%" stop-color="#5CEBFF" stop-opacity="0.9"/>
+      <stop offset="100%" stop-color="#00D4FF" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="rayVert3" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#00D4FF" stop-opacity="0"/>
+      <stop offset="32%" stop-color="#6DF0FF" stop-opacity="0.9"/>
+      <stop offset="50%" stop-color="#FFFFFF" stop-opacity="1"/>
+      <stop offset="68%" stop-color="#6DF0FF" stop-opacity="0.9"/>
+      <stop offset="100%" stop-color="#00D4FF" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="rayHoriz3" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#00D4FF" stop-opacity="0"/>
+      <stop offset="32%" stop-color="#6DF0FF" stop-opacity="0.9"/>
+      <stop offset="50%" stop-color="#FFFFFF" stop-opacity="1"/>
+      <stop offset="68%" stop-color="#6DF0FF" stop-opacity="0.9"/>
+      <stop offset="100%" stop-color="#00D4FF" stop-opacity="0"/>
+    </linearGradient>
+    <filter id="cyanGlow3" x="-40%" y="-40%" width="180%" height="180%">
+      <feGaussianBlur stdDeviation="2.5" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
   </defs>
+
   <rect x="4" y="4" width="120" height="120" rx="26" fill="url(#bgGrad)" stroke="url(#goldGrad)" stroke-width="4"/>
   <g transform="translate(13, 6) scale(0.79)">
     <path d="M68 12 L114 41 L92 55 L66 39 L45 52 L104 89 L104 104 L58 136 L14 107 L36 93 L62 109 L83 96 L24 59 L24 44 Z"
           fill="#14452F" stroke="url(#goldGrad)" stroke-width="5" stroke-linejoin="miter"/>
-    <circle cx="64" cy="74" r="13" fill="#0E3021" stroke="url(#goldGrad)" stroke-width="3.5"/>
-    <circle cx="64" cy="74" r="5.5" fill="#F7DF8E"/>
+
+    <!-- Cyan-white starburst flare -->
+    <g filter="url(#cyanGlow3)">
+      <circle cx="64" cy="74" r="32" fill="url(#cyanHalo3)"/>
+      <polygon points="60,70 128,2 68,78 0,146" fill="url(#rayDiag3)"/>
+      <polygon points="64,6 67,74 64,142 61,74" fill="url(#rayVert3)"/>
+      <polygon points="6,74 64,71 122,74 64,77" fill="url(#rayHoriz3)"/>
+    </g>
+
+    <!-- Center bronze orb with cyan ring -->
+    <circle cx="64" cy="74" r="13" fill="#1B8F9C" stroke="#99F6FF" stroke-width="2"/>
+    <circle cx="64" cy="74" r="8.2" fill="url(#orbBronze3)" stroke="#0D3B42" stroke-width="1"/>
   </g>
 </svg>

@@ -21,8 +21,48 @@
       <stop offset="50%" stop-color="#C49A3A"/>
       <stop offset="100%" stop-color="#7B5917"/>
     </linearGradient>
+    <radialGradient id="orbBronze" cx="38%" cy="32%" r="65%">
+      <stop offset="0%" stop-color="#FFF4D2"/>
+      <stop offset="35%" stop-color="#D4AE6A"/>
+      <stop offset="75%" stop-color="#6D5025"/>
+      <stop offset="100%" stop-color="#2E1F0C"/>
+    </radialGradient>
+    <radialGradient id="cyanHalo" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#FFFFFF" stop-opacity="0.95"/>
+      <stop offset="32%" stop-color="#7CF3FF" stop-opacity="0.8"/>
+      <stop offset="65%" stop-color="#00D4FF" stop-opacity="0.32"/>
+      <stop offset="100%" stop-color="#00D4FF" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="rayDiag" x1="0%" y1="100%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#00D4FF" stop-opacity="0"/>
+      <stop offset="28%" stop-color="#5CEBFF" stop-opacity="0.85"/>
+      <stop offset="50%" stop-color="#FFFFFF" stop-opacity="1"/>
+      <stop offset="72%" stop-color="#5CEBFF" stop-opacity="0.85"/>
+      <stop offset="100%" stop-color="#00D4FF" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="rayVert" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#00D4FF" stop-opacity="0"/>
+      <stop offset="32%" stop-color="#6DF0FF" stop-opacity="0.85"/>
+      <stop offset="50%" stop-color="#FFFFFF" stop-opacity="1"/>
+      <stop offset="68%" stop-color="#6DF0FF" stop-opacity="0.85"/>
+      <stop offset="100%" stop-color="#00D4FF" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="rayHoriz" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#00D4FF" stop-opacity="0"/>
+      <stop offset="32%" stop-color="#6DF0FF" stop-opacity="0.85"/>
+      <stop offset="50%" stop-color="#FFFFFF" stop-opacity="1"/>
+      <stop offset="68%" stop-color="#6DF0FF" stop-opacity="0.85"/>
+      <stop offset="100%" stop-color="#00D4FF" stop-opacity="0"/>
+    </linearGradient>
     <filter id="softShadow" x="-8%" y="-12%" width="118%" height="132%">
       <feDropShadow dx="0" dy="4" stdDeviation="4" flood-color="#0C2418" flood-opacity="0.22"/>
+    </filter>
+    <filter id="cyanGlow" x="-40%" y="-40%" width="180%" height="180%">
+      <feGaussianBlur stdDeviation="3.2" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
     </filter>
   </defs>
 
@@ -42,18 +82,29 @@
     <text x="345" y="99" fill="#13422C">Technika</text>
   </g>
 
-  <!-- Geometric faceted S emblem -->
-  <g transform="translate(14, 6)" filter="url(#softShadow)">
-    <!-- Subtle gear/ring accent -->
-    <circle cx="62" cy="74" r="46" fill="none" stroke="url(#steelBevel)" stroke-width="2.5" stroke-dasharray="18 6" opacity="0.75"/>
-    <!-- Outer dark green geometric S silhouette -->
-    <path d="M68 8 L118 40 L94 56 L66 38 L44 52 L106 90 L106 106 L58 140 L10 108 L34 92 L62 110 L84 96 L22 58 L22 42 Z"
-          fill="url(#forestGreen)" stroke="url(#steelBevel)" stroke-width="4" stroke-linejoin="miter"/>
-    <!-- Inner gold facet highlights -->
-    <path d="M68 15 L108 40 L94 49 L66 31 L34 52 L98 92 L98 102 L58 131 L18 106 L34 96 L62 114 L92 95 L28 55 L28 45 Z"
-          fill="none" stroke="#F6E09B" stroke-width="1.6" opacity="0.85"/>
-    <!-- Center precision bearing node -->
-    <circle cx="64" cy="74" r="13" fill="#14452F" stroke="url(#steelBevel)" stroke-width="3"/>
-    <circle cx="64" cy="74" r="5.5" fill="url(#goldPlate)"/>
+  <!-- Geometric faceted S emblem + glowing cyan starburst -->
+  <g transform="translate(14, 6)">
+    <g filter="url(#softShadow)">
+      <circle cx="64" cy="74" r="46" fill="none" stroke="url(#steelBevel)" stroke-width="2.5" opacity="0.75"/>
+      <path d="M68 8 L118 40 L94 56 L66 38 L44 52 L106 90 L106 106 L58 140 L10 108 L34 92 L62 110 L84 96 L22 58 L22 42 Z"
+            fill="url(#forestGreen)" stroke="url(#steelBevel)" stroke-width="4" stroke-linejoin="miter"/>
+      <path d="M68 15 L108 40 L94 49 L66 31 L34 52 L98 92 L98 102 L58 131 L18 106 L34 96 L62 114 L92 95 L28 55 L28 45 Z"
+            fill="none" stroke="#F6E09B" stroke-width="1.6" opacity="0.85"/>
+    </g>
+
+    <!-- Luminous cyan-white 6-ray starburst flare -->
+    <g filter="url(#cyanGlow)">
+      <circle cx="64" cy="74" r="30" fill="url(#cyanHalo)"/>
+      <!-- Primary diagonal slash ray (bottom-left to top-right) -->
+      <polygon points="60,70 132,-2 68,78 -4,150" fill="url(#rayDiag)"/>
+      <!-- Vertical needle ray -->
+      <polygon points="64,6 67,74 64,142 61,74" fill="url(#rayVert)"/>
+      <!-- Horizontal needle ray -->
+      <polygon points="4,74 64,71 124,74 64,77" fill="url(#rayHoriz)"/>
+    </g>
+
+    <!-- Center metallic bronze orb with glowing teal-cyan collar -->
+    <circle cx="64" cy="74" r="12.5" fill="#1B8F9C" stroke="#99F6FF" stroke-width="1.8"/>
+    <circle cx="64" cy="74" r="8.2" fill="url(#orbBronze)" stroke="#0D3B42" stroke-width="1"/>
   </g>
 </svg>
